@@ -26,19 +26,7 @@ class MarathonMapVis {
     }
 
     addGeoJsonLayer(geojsonData) {
-        // First, add the white border layer
-        L.geoJson(geojsonData, {
-            style: () => ({
-                color: 'white',
-                weight: 15,
-                opacity: 1,
-                lineCap: 'round',
-                lineJoin: 'round'
-            })
-        }).addTo(this.map);
-
-        // Then, add the main path layer with blue color
-        let pathLayer = L.geoJson(geojsonData, {
+        const pathLayer = L.geoJson(geojsonData, {
             style: () => ({
                 color: '#176585', // Blue color for the path
                 weight: 9, // Thinner than the border
@@ -49,24 +37,29 @@ class MarathonMapVis {
             })
         }).addTo(this.map);
 
+        const borderLayer = L.geoJson(geojsonData, {
+            style: () => ({
+                color: 'white',
+                weight: 15,
+                opacity: 1,
+                lineCap: 'round',
+                lineJoin: 'round'
+            })
+        }).addTo(this.map);
+
+        this.map.fitBounds(pathLayer.getBounds(), { padding: [50, 50] });
+
+        this.addCityMarkers();
+
         // Include the snaking effect if the plugin is available
-        if (typeof pathLayer.snakeIn === 'function') {
+        if (typeof pathLayer.snakeIn === 'function' && typeof borderLayer.snakeIn === 'function') {
+            console.log("Calling snakeIn on both layers.");
+            borderLayer.snakeIn();
             pathLayer.snakeIn();
         } else {
             console.error("Snake animation function is not available. Ensure Leaflet.Polyline.SnakeAnim is included.");
         }
-
-        // Listen to the 'snakeend' event to add city markers after the animation
-        pathLayer.on('snakestart snake snakeend', ev => {
-            if (ev.type === 'snakeend') {
-                this.addCityMarkers();
-            }
-        });
-
-        // Fit the map bounds to the path
-        this.map.fitBounds(pathLayer.getBounds());
     }
-
 
     addCityMarkers() {
         Object.keys(this.cities).forEach((city, index) => {
@@ -78,10 +71,10 @@ class MarathonMapVis {
                     radius: 500
                 }).addTo(this.map).bindTooltip(city, {
                     permanent: true,
-                    direction: 'center',
+                    direction: 'top',
                     className: 'city-label-tooltip'
                 }).bringToFront();
-            }, index * 200); // Delay to match the path drawing
+            }, index * 500);
         });
     }
 }
