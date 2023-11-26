@@ -10,162 +10,199 @@
     <link rel="stylesheet" href="css/leaflet.css">
     <script src="js/leaflet.js"></script>
     <script src="js/L.Polyline.SnakeAnim.js"></script>
+
 </head>
 <body>
 
 <!-- WRAPPER -->
-<div class="container-fluid" style="height: 100vh; padding-top: 1vh">
-    <div class="row">
-        <div id="title-section">
-            <h1 class="title-text">Marathon - Prototype V1</h1>
+<div class="container-fluid">
+    <div class="section" id="section1">
+        <div class="row">
+            <div id="title-section">
+                <h1 class="title-text">Marathon - Prototype V1</h1>
+            </div>
+        </div>
+        <div class="row">
+            <h5>Every year, over 1 million individual runners run a marathon. Marathoners come from all walks of life, from teens to the elderly, beginners to olympians—yet they are unified by a single goal of running 26.2 miles, a physical feat achievable by anybody with the heart to do so.</h5>
+            <h5>But if anybody can finish the run, can anybody finish fast? Who are the runners at the front of the pack in the world’s biggest marathons—where are they from, and how old are they? Let’s take a dive into a demographic exploration of the top marathoners of world major marathons, then later take a look at how you—and runners like you—stack up against the whole field of the classic Boston marathon.</h5>
         </div>
     </div>
-
-    <div class="row">
-        <h5>Every year, over 1 million individual runners run a marathon. Marathoners come from all walks of life, from teens to the elderly, beginners to olympians—yet they are unified by a single goal of running 26.2 miles, a physical feat achievable by anybody with the heart to do so.</h5>
-        <h5>But if anybody can finish the run, can anybody finish fast? Who are the runners at the front of the pack in the world’s biggest marathons—where are they from, and how old are they? Let’s take a dive into a demographic exploration of the top marathoners of world major marathons, then later take a look at how you—and runners like you—stack up against the whole field of the classic Boston marathon.</h5>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div id="route-map" style="height:400px;"></div>
-        </div>
-        <div class="col-md-4">
-            <h3>Boston Marathon</h3>
-            <p>asdfnoasdboibrewvinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aev</p>
+    <div class="section" id="section2">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div id="route-map" style="height:600px;"></div>
+            </div>
+            <div class="col-md-4">
+                <h3>Boston Marathon</h3>
+                <p>asdfnoasdboibrewvinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aeirv iuerapnver avinerivnero vieurnviuera viae ruivbeiuar viaenviea rvui eariv ae rvuaerbnvea rvuoerb vu earunvbeia rvaeuiornviae ruivp aev</p>
+            </div>
         </div>
     </div>
-
-
-    <div class="row">
-        <h3>PART I - WHO'S UP FRONT?</h3>
-    </div>
-
-    <div class="row">
-        <h5>Where in the world do our top runners come from?</h5>
-        <div class="col-10 offset-1" style="border: thin solid grey; border-radius: 5px;">
-            <!-- Select Criteria Menu -->
-            <div class="row">
-                <div class="col-8">
-                    <div class="row" style="height: 100%">
-                        <select id='mapCriteriaSelector' class="custom-select align-self-center" style="width: 50%" onchange="criteriaChange()">
-                            <option value="winner" selected>Winners</option>
-                            <option value="topThree">Top 3 Finishers</option>
-                            <option value="topHundred">Top 100 Finishers</option>
-                        </select>
+    <div class="section" id="section3">
+        <div class="row">
+            <h3>PART I - WHO'S UP FRONT?</h3>
+        </div>
+        <div class="row">
+            <h5>Where in the world do our top runners come from?</h5>
+            <div class="col-10 offset-1" style="border: thin solid grey; border-radius: 5px;">
+                <!-- Select Criteria Menu -->
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row" style="height: 100%">
+                            <select id='mapCriteriaSelector' class="custom-select align-self-center" style="width: 50%" onchange="criteriaChange()">
+                                <option value="winner" selected>Winners</option>
+                                <option value="topThree">Top 3 Finishers</option>
+                                <option value="topHundred">Top 100 Finishers</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Visualizations -->
+                <!-- Visualizations -->
 
-                    <div class="row"
-                         style="border: thin solid rgba(211,211,211,0.73); border-radius: 5px; background: rgba(214,226,233,0.42)">
-                        <div class="col">
-                            <div class="row">
-                                <div id="mapDiv" style="height: 50vh; width: 100%;"></div>
-                            </div>
+                <div class="row"
+                     style="border: thin solid rgba(211,211,211,0.73); border-radius: 5px; background: rgba(214,226,233,0.42)">
+                    <div class="col">
+                        <div class="row">
+                            <div id="mapDiv" style="height: 50vh; width: 100%;"></div>
                         </div>
-<!--                     <div class="col">
-                            <div class="row">
-                                <div id="stackedBarDiv" style="height: 71vh; width: 100%;"></div>
-                            </div>
-                        </div> -->
                     </div>
-                    <div class="row">
-                        <img src="img/stacked_bar.png" style="width: 100%; height: 100%">
-                    </div>
+                    <!--                     <div class="col">
+                                                <div class="row">
+                                                    <div id="stackedBarDiv" style="height: 71vh; width: 100%;"></div>
+                                                </div>
+                                            </div> -->
+                </div>
+                <div class="row">
+                    <img src="img/stacked_bar.png" style="width: 100%; height: 100%">
+                </div>
+            </div>
         </div>
     </div>
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="subheader">Participating Countries per Marathon</h3>
-        </div>
-        <div class="col-md-12">
-            <div id="network-vis"></div>
+    <div class="section" id="section4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="subheader">Participating Countries per Marathon</h3>
+            </div>
+            <div class="col-md-12">
+                <div id="network-vis"></div>
+                <div id="marathonSelect">
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <h5>Is there a hometown advantage—how do the local runners of a marathon major compare to visitors?</h5>
-        <p>At most marathon majors, runners from the host country are often overrepresented in the facing field, whether due to registration limits or simply proximity. But does this overrepresentation extend into the top end of the pack? How do hometown runners fare against the best?</p>
-
-        <em>(placeholder, add visualization like dot plot where local runners can be highlighted on an axis of performance)</em>
-    </div><br><br>
-
-    <div class="row">
-        <h5>What age are top runners, and is there a prime for performance?</h5>
-        <img src="img/age_tableau.png" style="width: 100%; height: 100%">
-    </div><br><br>
-
-    <div class="row">
-        <h5>How does gender factor in?</h5>
-        <img src="img/gender.png" style="width: 80%; height: 100%">
-    </div><br><br>
-
-    <div class="row">
-        <h3>PART II - How Do You Stack Up?</h3>
-    </div>
-
-    <div class="row">
-        <h5>Let's bring you into the story—specifically, into Boston 2019, the largest edition of the historic marathon to date.</h5>
-        <p>Enter information about yourself below to see how you, and others like you, would've fared in the 2019 Boston Marathon.</p>
-        <br>
-
-        <label for="nameInput">Name:</label>
-        <input type="text" id="nameInput" placeholder="Enter your name"><br><br>
-
-        <label for="ageInput">Age:</label>
-        <input type="number" id="ageInput" placeholder="Enter your age"><br><br>
-
-        <label for="homeInput">Home Country (or state if USA):</label>
-        <select id="homeInput", name="homeInput">
-            <option value id="MA">USA - Massachusetts</option>
-            <option value id="CA">USA - California</option>
-            <option value id="JPN">Japan</option>
-            <option value id="KEN">Kenya</option>
-            <option value id="ETH">Ethiopia</option>
-            <br><br>
-        </select>
-
-        <label for="paceInput">Approx. mile pace:</label>
-        <input type="time" id="paceInput"><br><br>
-
-        <input type="submit" value="Submit">
-
-    </div><br>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="subheader">Boston 2019 Field</h3>
-            <p>(we envision this visualization as a potential transitioning element from part 1 to part 2, as we narrow into the Boston specific data then expand the field size to the entire group.)</p>
+    <div class="section" id="section5">
+        <div class="row">
+            <h3>PART II - How Do You Stack Up?</h3>
         </div>
-        <!-- filter area -->
-        <div class="inline-div">
-            <!-- y-axis attribute dropdown selector -->
-            <label for="attribute-selector"><b>Country to highlight: </b></label>
-            <select id="attribute-selector">
-                <option value="KEN">Kenya</option>
-                <option value="ETH">Ethiopia</option>
-                <option value="JPN">Japan</option>
-                <option value="USA">United States of America</option>
+
+        <div class="row">
+            <h5>Let's bring you into the story—specifically, into Boston 2019, the largest edition of the historic marathon to date.</h5>
+            <p>Enter information about yourself below to see how you, and others like you, would've fared in the 2019 Boston Marathon.</p>
+            <br>
+
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name"><br><br>
+
+            <label for="ageInput">Age:</label>
+            <input type="number" id="ageInput" placeholder="Enter your age"><br><br>
+
+            <label for="homeInput">Home Country (or state if USA):</label>
+            <select id="homeInput", name="homeInput">
+                <option value id="MA">USA - Massachusetts</option>
+                <option value id="CA">USA - California</option>
+                <option value id="JPN">Japan</option>
+                <option value id="KEN">Kenya</option>
+                <option value id="ETH">Ethiopia</option>
+                <br><br>
             </select>
-        </div>
-        <div class="inline-div">
-            <!-- year range slider -->
-            <div id="slider"></div>
-        </div>
-        <div class="col-md-12">
-            <div id="dotDiv"></div>
+
+            <label for="paceInput">Approx. mile pace:</label>
+            <input type="time" id="paceInput"><br><br>
+
+            <input type="submit" value="Submit">
+
+        </div><br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="subheader">Boston 2019 Field</h3>
+                <p>(we envision this visualization as a potential transitioning element from part 1 to part 2, as we narrow into the Boston specific data then expand the field size to the entire group.)</p>
+            </div>
+            <!-- filter area -->
+            <div class="inline-div">
+                <!-- y-axis attribute dropdown selector -->
+                <label for="attribute-selector"><b>Country to highlight: </b></label>
+                <select id="attribute-selector">
+                    <option value="KEN">Kenya</option>
+                    <option value="ETH">Ethiopia</option>
+                    <option value="JPN">Japan</option>
+                    <option value="USA">United States of America</option>
+                </select>
+            </div>
+            <div class="inline-div">
+                <!-- year range slider -->
+                <div id="slider"></div>
+            </div>
+            <div class="col-md-12">
+                <div id="dotDiv"></div>
+            </div>
         </div>
     </div>
+    <div class="section" id="section6">
 
-    <div class="row">
-        <h5>How fast do you have to run to keep up with top runners?</h5>
+    </div>
+    <div class="section" id="section7">
 
-        <em>(ANIMATION - shape of a track with dots, representing runners, traveling around. dot speeds are running speeds calculated from marathon finish times. there is one dot for the user, and other dots can represent the winner of the selected year’s Boston marathon, the fastest runner of the same demographic profile as the user, and the average speed of all runners of the same demographic profile as the user)</em>
-    </div><br><br>
+    </div>
+    <div class="section" id="section8">
+
+    </div>
+    <div class="section" id="section9">
+
+    </div>
+
+    <div id="navigation">
+        <div class="circle" data-target="#section1"></div>
+        <div class="circle" data-target="#section2"></div>
+        <div class="circle" data-target="#section3"></div>
+        <div class="circle" data-target="#section4"></div>
+        <div class="circle" data-target="#section5"></div>
+        <div class="circle" data-target="#section6"></div>
+        <div class="circle" data-target="#section7"></div>
+        <div class="circle" data-target="#section8"></div>
+    </div>
+
+
+
+
+
+
+
+<!--    <div class="row">-->
+<!--        <h5>Is there a hometown advantage—how do the local runners of a marathon major compare to visitors?</h5>-->
+<!--        <p>At most marathon majors, runners from the host country are often overrepresented in the facing field, whether due to registration limits or simply proximity. But does this overrepresentation extend into the top end of the pack? How do hometown runners fare against the best?</p>-->
+
+<!--        <em>(placeholder, add visualization like dot plot where local runners can be highlighted on an axis of performance)</em>-->
+<!--    </div><br><br>-->
+
+<!--    <div class="row">-->
+<!--        <h5>What age are top runners, and is there a prime for performance?</h5>-->
+<!--        <img src="img/age_tableau.png" style="width: 100%; height: 100%">-->
+<!--    </div><br><br>-->
+
+<!--    <div class="row">-->
+<!--        <h5>How does gender factor in?</h5>-->
+<!--        <img src="img/gender.png" style="width: 80%; height: 100%">-->
+<!--    </div><br><br>-->
+
+
+
+<!--    <div class="row">-->
+<!--        <h5>How fast do you have to run to keep up with top runners?</h5>-->
+
+<!--        <em>(ANIMATION - shape of a track with dots, representing runners, traveling around. dot speeds are running speeds calculated from marathon finish times. there is one dot for the user, and other dots can represent the winner of the selected year’s Boston marathon, the fastest runner of the same demographic profile as the user, and the average speed of all runners of the same demographic profile as the user)</em>-->
+<!--    </div><br><br>-->
 
 
 </div>
@@ -193,6 +230,7 @@
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
 <!-- OWN JS -->
+<script src="js/scroll.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/stackedBar.js"></script>
 <script src="js/networkVis.js"></script>

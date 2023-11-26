@@ -5,7 +5,8 @@
 // // init global variables, switches, helper functions
 
 let myMapVis,
-    myDotVis;
+    myDotVis,
+    marathonMapVis;
 //
 // function updateAllVisualizations(){
 //     myPieChart.wrangleData()
@@ -48,7 +49,25 @@ function initMainPage(allDataArray) {
     myDotVis = new DotVis('dotDiv', allDataArray[0], allDataArray[2]);
     // myStackedBar = new StackedBar('stackedBarDiv', allDataArray[0], allDataArray[1], 'winner');
     let networkVis = new NetworkVis("network-vis", allDataArray[0]);
-    let marathonMapVis = new MarathonMapVis('route-map', 'data/boston_marathon.geojson', cities);
+    marathonMapVis = new MarathonMapVis('route-map', 'data/boston_marathon.geojson', cities);
+    observeSection2();
+}
+
+function observeSection2() {
+    let section2 = document.getElementById('section2');
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                marathonMapVis.addCityMarkers(); // Add city markers when section comes into view
+                marathonMapVis.snake(); // Start snaking when section comes into view
+            } else {
+                marathonMapVis.clearCityMarkers(); // Remove city markers when section goes out of view
+                marathonMapVis.resetSnake(); // Reset snaking when section goes out of view
+            }
+        });
+    }, { threshold: [0.5] });
+
+    observer.observe(section2);
 }
 
 function criteriaChange() {

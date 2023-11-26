@@ -114,3 +114,45 @@ input, select {
 .noUi-connect {
     background: darkblue;
 }
+
+/* Important: Scroll Functionality for web */
+
+#navigation {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000; /* Increased z-index */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: grey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+.circle.active {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 20px;
+    background-color: blue;
+    transform: translateX(-50%) translateY(-2.5px);
+}
+
+.section {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent overall page scroll */
+}
