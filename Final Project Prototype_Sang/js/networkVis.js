@@ -80,11 +80,11 @@ class NetworkVis {
         });
 
         const initialPositions = {
-            'Boston': { x: vis.width * 0.1, y: vis.height * 0.7},
-            'Chicago': { x: vis.width * 0.1, y: vis.height * 0.3},
-            'New York': { x: vis.width / 2, y: vis.height/2 },
-            'London': { x: vis.width * 0.9, y: vis.height * 0.3},
-            'Berlin': { x: vis.width * 0.9, y: vis.height * 0.7},
+            'Boston': { x: vis.width / 2, y: vis.height * 0.1},
+            'Chicago': { x: vis.width * 0.1, y: vis.height * 0.4},
+            'New York': { x: vis.width * 0.25, y: vis.height * 0.9},
+            'London': { x: vis.width * 0.9, y: vis.height * 0.4},
+            'Berlin': { x: vis.width * 0.75, y: vis.height * 0.9},
         };
 
         if (vis.selectedMarathon !== 'all') {
