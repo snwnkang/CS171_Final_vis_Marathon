@@ -87,13 +87,33 @@ class NetworkVis {
             'Berlin': { x: vis.width * 0.9, y: vis.height * 0.7},
         };
 
-        vis.nodes.forEach(node => {
-            if (node.group === 'Marathon') {
-                node.fx = initialPositions[node.id].x;
-                node.fy = initialPositions[node.id].y;
-            }
-        });
+        if (vis.selectedMarathon !== 'all') {
+            // Reset positions for all nodes to allow for new layout
+            vis.nodes.forEach(node => {
+                node.fx = null;
+                node.fy = null;
+            });
 
+            // Find the selected marathon node and set it to the center
+            vis.nodes.forEach(node => {
+                if (node.id === vis.selectedMarathon) {
+                    node.fx = vis.width / 2;
+                    node.fy = vis.height / 2;
+                }
+            });
+        } else {
+            // When all marathons are selected, assign initial positions
+            vis.nodes.forEach(node => {
+                if (node.group === 'Marathon') {
+                    node.fx = initialPositions[node.id].x;
+                    node.fy = initialPositions[node.id].y;
+                } else {
+                    // Allow country nodes to be positioned by the force simulation
+                    node.fx = null;
+                    node.fy = null;
+                }
+            });
+        }
         let maxCount = d3.max(vis.data, d => d.count);
 
         // Update the domain of the size scale with the new max count value
@@ -173,7 +193,7 @@ class NetworkVis {
             .on("end", dragEnded));
 
         function dragStarted(event, d) {
-            if (!event.active) vis.simulation.alphaTarget(0.3).restart();
+            if (!event.active) vis.simulation.alphaTarget(0.1).restart();
 
             if (d.group === 'Marathon') {
                 //Increase the charge strength to push unrelated nodes further away
@@ -188,7 +208,7 @@ class NetworkVis {
                         return vis.links.some(link =>
                             (link.source === d && link.target === node) ||
                             (link.target === d && link.source === node)
-                        ) ? 3 : 0.05; //Lower strength for nodes not connected to the dragged marathon
+                        ) ? 2.5 : 0.01; //Lower strength for nodes not connected to the dragged marathon
                     })
                 );
             }
@@ -209,12 +229,12 @@ class NetworkVis {
             }
 
             //Restart the simulation to apply the positional constraints
-            vis.simulation.alphaTarget(0.3).restart();
+            vis.simulation.alphaTarget(0.1).restart();
         }
 
 
         function dragEnded(event, d) {
-            if (!event.active) vis.simulation.alphaTarget(0);
+            if (!event.active) vis.simulation.alphaTarget(0).restart();
 
             if (d.group === 'Marathon') {
                 // Reset the charge force strength
