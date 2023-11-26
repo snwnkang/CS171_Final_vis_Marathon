@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ddfb13-7e7c-40f7-b25d-4e0ea1c1cf78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/js/networkVis.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/networkVis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Sang/Desktop/CS171_Final_vis_Marathon/Final Project Prototype_Sang",
+    "last_opened_file_path": "C:/Users/Sang/Desktop/CS171/FINAL PROJECT/Final Project Prototype_Sang",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +74,7 @@
       <workItem from="1701034391894" duration="57000" />
       <workItem from="1701034464228" duration="44000" />
       <workItem from="1701034521586" duration="181000" />
-      <workItem from="1701034716448" duration="341000" />
+      <workItem from="1701034716448" duration="893000" />
     </task>
     <servers />
   </component>
