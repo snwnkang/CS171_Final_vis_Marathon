@@ -2,6 +2,7 @@ class NetworkVis {
     constructor(parentElement, data) {
         this.parentElement = parentElement;
         this.data = data;
+        this.selectedMarathon = 'all';
 
         this.initVis();
     }
@@ -42,17 +43,28 @@ class NetworkVis {
                 });
             });
 
+        vis.linksGroup = vis.svg.append("g").attr("class", "links-group");
+        vis.nodesGroup = vis.svg.append("g").attr("class", "nodes-group");
+
+        vis.wrangleData();
+    }
+
+    filterByMarathon(selectedMarathon) {
+        let vis = this;
+        vis.selectedMarathon = selectedMarathon;
         vis.wrangleData();
     }
 
     wrangleData() {
         let vis = this;
 
+        let filteredData = this.selectedMarathon === 'all' ? vis.data : vis.data.filter(d => d.Marathon === vis.selectedMarathon);
+
         //Create a unique list of marathons
-        vis.marathons = Array.from(new Set(vis.data.map(d => d.Marathon)));
+        vis.marathons = Array.from(new Set(filteredData.map(d => d.Marathon)));
 
         //Create a unique list of countries
-        vis.countries = Array.from(new Set(vis.data.map(d => d.Country)));
+        vis.countries = Array.from(new Set(filteredData.map(d => d.Country)));
 
         //Initialize the nodes array with the marathon nodes
         vis.nodes = vis.marathons.map(marathon => {
@@ -63,7 +75,7 @@ class NetworkVis {
             vis.nodes.push({
                 id: country,
                 group: 'Country',
-                count: vis.data.filter(d => d.Country === country).length
+                count: filteredData.filter(d => d.Country === country).length
             });
         });
 
@@ -90,7 +102,7 @@ class NetworkVis {
         //Create the links between marathon nodes and country nodes
         vis.links = [];
         vis.marathons.forEach(marathon => {
-            vis.data.filter(d => d.Marathon === marathon).forEach(entry => {
+            filteredData.filter(d => d.Marathon === marathon).forEach(entry => {
                 vis.links.push({
                     source: marathon,
                     target: entry.Country
@@ -119,13 +131,46 @@ class NetworkVis {
         //Update the size scale domain after processing the data
         vis.sizeScale.domain([0, d3.max(vis.nodes, d => d.count || 0)]);
 
-        //Draw the links (paths)
-        vis.linkElements = vis.svg.selectAll(".link")
-            .data(vis.links)
-            .enter().append("line")
+        vis.linkElements = vis.linksGroup.selectAll(".link")
+            .data(vis.links, d => d.source.id + "-" + d.target.id);
+
+        vis.linkElements.exit().remove();
+
+        let enterLinks = vis.linkElements.enter().append("line")
             .attr("class", "link")
             .style("stroke-width", .3)
             .style("stroke", "#9a9a93");
+
+        vis.linkElements = enterLinks.merge(vis.linkElements);
+
+        //Draw the nodes (circles)
+        //Here we use a function to determine the radius based on whether the node is a country or a marathon
+        vis.nodeElements = vis.nodesGroup.selectAll(".node")
+            .data(vis.nodes, d => d.id);
+
+        vis.nodeElements.exit().remove();
+
+        let enterNodes = vis.nodeElements.enter().append("circle")
+            .attr("class", "node")
+            .attr("r", d => d.group === 'Marathon' ? 15 : vis.sizeScale(d.count))
+            .style("fill", d => {
+                //Apply different colors to marathon and country nodes
+                if (d.group === 'Marathon') {
+                    return marathonColors[d.id]; //Specific color for marathon nodes
+                } else {
+                    return "#f6905e"; //Specific color for country nodes
+                }
+            })
+            .style("stroke", "#26113f")
+            .style("stroke-width", d => d.group === 'Marathon' ? 2 : 0.5)
+
+
+        vis.nodeElements = enterNodes.merge(vis.nodeElements);
+
+        vis.nodeElements.call(d3.drag()
+            .on("start", dragStarted)
+            .on("drag", dragged)
+            .on("end", dragEnded));
 
         function dragStarted(event, d) {
             if (!event.active) vis.simulation.alphaTarget(0.3).restart();
@@ -195,29 +240,6 @@ class NetworkVis {
             vis.simulation.alpha(1).restart();
         }
 
-        //Draw the nodes (circles)
-        //Here we use a function to determine the radius based on whether the node is a country or a marathon
-        vis.nodeElements = vis.svg.selectAll(".node")
-            .data(vis.nodes)
-            .enter().append("circle")
-            .attr("class", "node")
-            .attr("r", d => d.group === 'Marathon' ? 15 : vis.sizeScale(d.count))
-            .style("fill", d => {
-                //Apply different colors to marathon and country nodes
-                if (d.group === 'Marathon') {
-                    return marathonColors[d.id]; //Specific color for marathon nodes
-                } else {
-                    return "#f6905e"; //Specific color for country nodes
-                }
-            })
-            .style("stroke", "#26113f")
-            .style("stroke-width", d => d.group === 'Marathon' ? 2 : 0.5);
-
-        vis.nodeElements.call(d3.drag()
-            .on("start", dragStarted)
-            .on("drag", dragged)
-            .on("end", dragEnded));
-
         //Labels for the nodes
         vis.textElements = vis.svg.selectAll(".node-text")
             .data(vis.nodes)
@@ -256,5 +278,9 @@ class NetworkVis {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
         }
+
+        vis.simulation.nodes(vis.nodes).on("tick", ticked);
+        vis.simulation.force("link").links(vis.links);
+        vis.simulation.alpha(1).restart();
     }
 }

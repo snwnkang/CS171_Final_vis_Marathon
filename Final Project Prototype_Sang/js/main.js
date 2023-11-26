@@ -6,7 +6,8 @@
 
 let myMapVis,
     myDotVis,
-    marathonMapVis;
+    marathonMapVis,
+    networkVis;
 //
 // function updateAllVisualizations(){
 //     myPieChart.wrangleData()
@@ -48,10 +49,18 @@ function initMainPage(allDataArray) {
     myMapVis = new MapVis('mapDiv', allDataArray[0], allDataArray[1], 'winner');
     myDotVis = new DotVis('dotDiv', allDataArray[0], allDataArray[2]);
     // myStackedBar = new StackedBar('stackedBarDiv', allDataArray[0], allDataArray[1], 'winner');
-    let networkVis = new NetworkVis("network-vis", allDataArray[0]);
+    networkVis = new NetworkVis("network-vis", allDataArray[0]);
     marathonMapVis = new MarathonMapVis('route-map', 'data/boston_marathon.geojson', cities);
     observeSection2();
 }
+
+document.getElementById('marathonSelector').addEventListener('change', function() {
+    // Get the selected value
+    let selectedMarathon = this.value;
+
+    // Call a method to update the network visualization
+    networkVis.filterByMarathon(selectedMarathon);
+});
 
 function observeSection2() {
     let section2 = document.getElementById('section2');
