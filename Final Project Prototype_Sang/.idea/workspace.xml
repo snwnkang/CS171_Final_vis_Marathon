@@ -4,95 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ddfb13-7e7c-40f7-b25d-4e0ea1c1cf78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f176500f-532d-4037-b0cc-ea7b0846d557" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2XpVftHkkXMtOuBzN8uUoPJcsWd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Sang/Desktop/CS171/FINAL PROJECT/Final Project Prototype_Sang",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="f9ddfb13-7e7c-40f7-b25d-4e0ea1c1cf78" name="Changes" comment="" />
-      <created>1699326115171</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1699326115171</updated>
-      <workItem from="1699326116536" duration="7685000" />
-      <workItem from="1699372314616" duration="579000" />
-      <workItem from="1699373100108" duration="11059000" />
-      <workItem from="1699818943410" duration="295000" />
-      <workItem from="1699819542259" duration="5793000" />
-      <workItem from="1700163367604" duration="131000" />
-      <workItem from="1700263417146" duration="113000" />
-      <workItem from="1700438316407" duration="1291000" />
-      <workItem from="1700442197358" duration="2003000" />
-      <workItem from="1700961862295" duration="5000" />
-      <workItem from="1700961879977" duration="13792000" />
-      <workItem from="1700976517119" duration="10391000" />
-      <workItem from="1700987652046" duration="5677000" />
-      <workItem from="1701024775009" duration="2873000" />
-      <workItem from="1701027697068" duration="4721000" />
-      <workItem from="1701034391894" duration="57000" />
-      <workItem from="1701034464228" duration="44000" />
-      <workItem from="1701034521586" duration="181000" />
-      <workItem from="1701034716448" duration="893000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
