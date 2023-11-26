@@ -41,6 +41,10 @@
     fill: #333;
 }
 
+.my-non-svg-elements {
+    transform-origin: 0px 0px;
+}
+
 .marathon-text {
     font-weight: bold;
     font-size: 12px;

@@ -86,8 +86,21 @@
             </div>
             <div class="col-md-12">
                 <div id="network-vis"></div>
-                <div id="marathonSelect">
-                </div>
+                <label for="marathonSelector">Select Marathon:</label>
+                <select id="marathonSelector">
+                    <option value="all">All Marathons</option>
+                    <option value="Boston">Boston</option>
+                    <option value="London">London</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="New York">New York</option>
+                </select>
+
+                <label for="sizeSelector">Node Size:</label>
+                <select id="sizeSelector">
+                    <option value="count" selected>Count</option>
+                    <option value="seconds">Seconds</option>
+                </select>
             </div>
         </div>
     </div>
