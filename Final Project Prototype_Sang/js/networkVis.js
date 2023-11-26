@@ -30,7 +30,7 @@ class NetworkVis {
         //Initialize the simulation
         vis.simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(d => d.id).distance(100))
-            .force("charge", d3.forceManyBody().strength(-400))
+            .force("charge", d3.forceManyBody().strength(-50))
             .force("collide", d3.forceCollide(d => vis.sizeScale(d.count || 0) + 6))
             .force("radial", d3.forceRadial(function(d) {
                 return d.group === 'Marathon' ? 0 : 150;
@@ -75,13 +75,33 @@ class NetworkVis {
             'Berlin': { x: vis.width * 0.9, y: vis.height * 0.7},
         };
 
-        vis.nodes.forEach(node => {
-            if (node.group === 'Marathon') {
-                node.fx = initialPositions[node.id].x;
-                node.fy = initialPositions[node.id].y;
-            }
-        });
+        if (vis.selectedMarathon !== 'all') {
+            // Reset positions for all nodes to allow for new layout
+            vis.nodes.forEach(node => {
+                node.fx = null;
+                node.fy = null;
+            });
 
+            // Find the selected marathon node and set it to the center
+            vis.nodes.forEach(node => {
+                if (node.id === vis.selectedMarathon) {
+                    node.fx = vis.width / 2;
+                    node.fy = vis.height / 2;
+                }
+            });
+        } else {
+            // When all marathons are selected, assign initial positions
+            vis.nodes.forEach(node => {
+                if (node.group === 'Marathon') {
+                    node.fx = initialPositions[node.id].x;
+                    node.fy = initialPositions[node.id].y;
+                } else {
+                    // Allow country nodes to be positioned by the force simulation
+                    node.fx = null;
+                    node.fy = null;
+                }
+            });
+        }
         let maxCount = d3.max(vis.data, d => d.count);
 
         // Update the domain of the size scale with the new max count value
@@ -128,7 +148,7 @@ class NetworkVis {
             .style("stroke", "#9a9a93");
 
         function dragStarted(event, d) {
-            if (!event.active) vis.simulation.alphaTarget(0.3).restart();
+            if (!event.active) vis.simulation.alphaTarget(0.05).restart();
 
             if (d.group === 'Marathon') {
                 //Increase the charge strength to push unrelated nodes further away
@@ -143,7 +163,7 @@ class NetworkVis {
                         return vis.links.some(link =>
                             (link.source === d && link.target === node) ||
                             (link.target === d && link.source === node)
-                        ) ? 3 : 0.05; //Lower strength for nodes not connected to the dragged marathon
+                        ) ? 2.2 : 0.05; //Lower strength for nodes not connected to the dragged marathon
                     })
                 );
             }
@@ -164,12 +184,14 @@ class NetworkVis {
             }
 
             //Restart the simulation to apply the positional constraints
-            vis.simulation.alphaTarget(0.3).restart();
+            vis.simulation.alphaTarget(0.05).restart();
         }
 
 
         function dragEnded(event, d) {
-            if (!event.active) vis.simulation.alphaTarget(0);
+            if (!event.active) vis.simulation.alphaTarget(0).restart();
+
+            setTimeout(() => vis.simulation.alphaTarget(0), 1000);
 
             if (d.group === 'Marathon') {
                 // Reset the charge force strength
