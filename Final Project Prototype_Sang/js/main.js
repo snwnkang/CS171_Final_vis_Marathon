@@ -6,18 +6,29 @@
 
 let myMapVis,
     myDotVis;
-
 //
 // function updateAllVisualizations(){
 //     myPieChart.wrangleData()
 //     myMapVis.wrangleData()
 // }
 
+let cities = {
+    Hopkinton: [42.2287, -71.5226],
+    Ashland: [42.2580, -71.4634],
+    Framingham: [42.2773, -71.4162],
+    Natick: [42.2830, -71.3468],
+    Wellesley: [42.2968, -71.2924],
+    Newton: [42.3370, -71.2092],
+    Brookline: [42.3420, -71.1212],
+    Boston: [42.3510, -71.0810]
+};
+
 // Load data using promises
 let promises = [
     d3.csv("data/combined_updated_dataAll.csv"),
     d3.json("data/countries.geojson"),
-    d3.csv("data/full2019boston.csv")
+    d3.csv("data/full2019boston.csv"),
+    d3.json("data/boston_marathon.geojson")
     // d3.csv("data/winners.csv")
 ];
 
@@ -37,6 +48,7 @@ function initMainPage(allDataArray) {
     myDotVis = new DotVis('dotDiv', allDataArray[0], allDataArray[2]);
     // myStackedBar = new StackedBar('stackedBarDiv', allDataArray[0], allDataArray[1], 'winner');
     let networkVis = new NetworkVis("network-vis", allDataArray[0]);
+    let marathonMapVis = new MarathonMapVis('route-map', 'data/boston_marathon.geojson', cities);
 }
 
 function criteriaChange() {

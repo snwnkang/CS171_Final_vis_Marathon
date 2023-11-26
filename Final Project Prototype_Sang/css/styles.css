@@ -11,6 +11,20 @@
     font: 14px sans-serif;
 }
 
+/****************/
+/*  leaflet map */
+/****************/
+
+.city-label-tooltip {
+    background-color: #F7F5CC !important;
+    border-radius: 6px !important;
+    color: #053F1F !important;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 4px 6px;
+    text-align: center;
+}
+
 .connection {
     stroke: black;
     stroke-dasharray: 5;
