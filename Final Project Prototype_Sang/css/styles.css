@@ -116,7 +116,7 @@ input, select {
 }
 
 .noUi-connect {
-    background: darkblue;
+    background: teal;
 }
 
 /* Important: Scroll Functionality for web */
@@ -159,4 +159,75 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Prevent overall page scroll */
+}
+
+#popularity-chart {
+    min-height: 300px; /* Adjust as needed */
+}
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 120px;
+    height: 50px;
+    padding: 4px;
+    font: 14px sans-serif;
+    font-weight: bold;
+    background: #F7F5CC;
+    border: 2px solid #354d5f; /* Replace 'your-border-color' with your desired color */
+    border-radius: 8px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legend-label {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+#route-map {
+    margin-bottom: 30px;
+}
+
+/* Target the specific slider by its unique ID */
+#yearRangeSlider.custom-slider .noUi-connect {
+    background: #b8c7c4;
+    width: 100%; /* Adjust the width as needed */
+}
+
+#yearRangeSlider.custom-slider {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Style for the marathon buttons container */
+.button-container {
+    text-align: center; /* Center the buttons horizontally */
+}
+
+/* Style for the marathon buttons (circles) */
+.marathon-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 55px;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform-origin: center;
+}
+
+/* Style for the selected button */
+.marathon-button.selected {
+    transform: scale(1.5);
 }

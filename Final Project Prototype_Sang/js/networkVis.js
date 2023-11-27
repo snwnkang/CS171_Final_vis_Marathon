@@ -7,13 +7,15 @@ class NetworkVis {
         this.initVis();
     }
 
+
+
     initVis() {
         let vis = this;
 
         //Set margins and dimensions
         vis.margin = { top: 40, right: 120, bottom: 60, left: 120 };
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-        vis.height = 600 - vis.margin.top - vis.margin.bottom;
+        vis.height = 700 - vis.margin.top - vis.margin.bottom;
 
 
 
@@ -52,6 +54,16 @@ class NetworkVis {
     filterByMarathon(selectedMarathon) {
         let vis = this;
         vis.selectedMarathon = selectedMarathon;
+
+        // Check if the selected marathon is one of the specified marathons
+        const showButtonMarathons = ['Boston', 'London', 'Chicago', 'Berlin', 'New York'];
+
+        if (showButtonMarathons.includes(selectedMarathon)) {
+            document.getElementById('showTop10Button').style.display = 'block';
+        } else {
+            document.getElementById('showTop10Button').style.display = 'none';
+        }
+
         vis.wrangleData();
     }
 
@@ -59,6 +71,8 @@ class NetworkVis {
         let vis = this;
 
         let filteredData = this.selectedMarathon === 'all' ? vis.data : vis.data.filter(d => d.Marathon === vis.selectedMarathon);
+
+        filteredData = filteredData.filter(d => d.Country !== null);
 
         //Create a unique list of marathons
         vis.marathons = Array.from(new Set(filteredData.map(d => d.Marathon)));
@@ -79,12 +93,13 @@ class NetworkVis {
             });
         });
 
+
         const initialPositions = {
-            'Boston': { x: vis.width / 2, y: vis.height * 0.1},
+            'Boston': { x: vis.width / 2, y: vis.height * 0.05},
             'Chicago': { x: vis.width * 0.1, y: vis.height * 0.4},
-            'New York': { x: vis.width * 0.25, y: vis.height * 0.9},
+            'New York': { x: vis.width * 0.25, y: vis.height * 0.95},
             'London': { x: vis.width * 0.9, y: vis.height * 0.4},
-            'Berlin': { x: vis.width * 0.75, y: vis.height * 0.9},
+            'Berlin': { x: vis.width * 0.75, y: vis.height * 0.95},
         };
 
         if (vis.selectedMarathon !== 'all') {
