@@ -91,7 +91,7 @@ marathonButtons.forEach(button => {
 
         // Call a method to update the network visualization
         networkVis.filterByMarathon(selectedMarathon);
-        networkVis.clearBarCharts();
+
         // Remove the "selected" class from all buttons
         marathonButtons.forEach(btn => {
             btn.classList.remove('selected');
@@ -99,14 +99,7 @@ marathonButtons.forEach(button => {
 
         // Add the "selected" class to the clicked button
         this.classList.add('selected');
-
-
     });
-});
-
-document.getElementById('showTop10Button').addEventListener('click', function() {
-    // Handle the button click event here
-    networkVis.handleShowTop10Click();
 });
 
 

@@ -12,25 +12,22 @@ class NetworkVis {
     initVis() {
         let vis = this;
 
-        //Set margins and dimensions
+        // Set margins and dimensions
         vis.margin = { top: 40, right: 120, bottom: 60, left: 120 };
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = 700 - vis.margin.top - vis.margin.bottom;
 
-
-
-        //Create the SVG drawing area
+        // Create the SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
             .attr("transform", `translate(${vis.margin.left},${vis.margin.top})`);
 
-
-        //Define the size scale, but don't set the domain yet
+        // Define the size scale, but don't set the domain yet
         vis.sizeScale = d3.scaleSqrt().range([5, 30]);
 
-        //Initialize the simulation
+        // Initialize the simulation
         vis.simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(d => d.id).distance(100))
             .force("charge", d3.forceManyBody().strength(-400))
@@ -38,12 +35,7 @@ class NetworkVis {
             .force("radial", d3.forceRadial(function(d) {
                 return d.group === 'Marathon' ? 0 : 150;
             }, vis.width / 2, vis.height / 2).strength(0.8))
-            .force("bounds", function() {
-                vis.nodes.forEach(d => {
-                    d.x = Math.max(vis.margin.left + vis.sizeScale(d.count || 0), Math.min(vis.width - vis.margin.right - vis.sizeScale(d.count || 0), d.x));
-                    d.y = Math.max(vis.margin.top + vis.sizeScale(d.count || 0), Math.min(vis.height - vis.margin.bottom - vis.sizeScale(d.count || 0), d.y));
-                });
-            });
+            .force("bounds", vis.forceBounds.bind(vis));
 
         vis.linksGroup = vis.svg.append("g").attr("class", "links-group");
         vis.nodesGroup = vis.svg.append("g").attr("class", "nodes-group");
@@ -51,18 +43,65 @@ class NetworkVis {
         vis.wrangleData();
     }
 
+    // Ensure nodes stay within the bounds of the SVG
+    forceBounds() {
+        let vis = this;
+        vis.nodes.forEach(d => {
+            d.x = Math.max(vis.sizeScale(d.count || 0), Math.min(vis.width - vis.sizeScale(d.count || 0), d.x));
+            d.y = Math.max(vis.sizeScale(d.count || 0), Math.min(vis.height - vis.sizeScale(d.count || 0), d.y));
+        });
+    }
+
+    ticked() {
+        let vis = this;
+        if (vis.linkElements) {
+            vis.linkElements
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+        }
+        if (vis.nodeElements) {
+            vis.nodeElements
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+        }
+        if (vis.textElements) {
+            vis.textElements
+                .attr("x", d => d.x + 10)
+                .attr("y", d => d.y + 3);
+        }
+    }
+
     filterByMarathon(selectedMarathon) {
         let vis = this;
         vis.selectedMarathon = selectedMarathon;
+
+        vis.svg.selectAll('.bar').remove();
+        vis.svg.selectAll('.bar-label').remove();
+        vis.svg.selectAll('.bar-label-group').remove();
+
+        vis.nodes.forEach(node => {
+            node.fx = null;
+            node.fy = null;
+        });
 
         // Check if the selected marathon is one of the specified marathons
         const showButtonMarathons = ['Boston', 'London', 'Chicago', 'Berlin', 'New York'];
 
         if (showButtonMarathons.includes(selectedMarathon)) {
             document.getElementById('showTop10Button').style.display = 'block';
+            document.getElementById('showTop10Button').onclick = () => vis.highlightTop10Countries();
         } else {
             document.getElementById('showTop10Button').style.display = 'none';
         }
+
+        vis.simulation
+            .force("radial", d3.forceRadial(function(d) {
+                return d.group === 'Marathon' ? 0 : 150;
+            }, vis.width / 2, vis.height / 2).strength(0.8))
+            .alpha(1) // Restart the simulation with an alpha value of 1
+            .restart();
 
         vis.wrangleData();
     }
@@ -71,6 +110,7 @@ class NetworkVis {
         let vis = this;
 
         let filteredData = this.selectedMarathon === 'all' ? vis.data : vis.data.filter(d => d.Marathon === vis.selectedMarathon);
+
 
         filteredData = filteredData.filter(d => d.Country !== null);
 
@@ -284,38 +324,127 @@ class NetworkVis {
             .attr("dy", 4)
             .text(d => d.id || "Unknown");
 
-        //Update and restart the simulation.
         vis.simulation
             .nodes(vis.nodes)
-            .on("tick", ticked);
+            .on("tick", () => vis.ticked());
 
         vis.simulation.force("link")
             .links(vis.links);
 
-        function ticked() {
-            vis.linkElements
-                .attr("x1", d => d.source.x)
-                .attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x)
-                .attr("y2", d => d.target.y);
+        vis.simulation.alpha(1).restart();
+    }
 
-            vis.nodeElements
-                .attr("cx", d => d.x)
-                .attr("cy", d => d.y);
+    highlightTop10Countries() {
+        let vis = this;
 
-            vis.svg.selectAll("line")
-                .attr("x1", d => d.source.x)
-                .attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x)
-                .attr("y2", d => d.target.y);
+        let filteredData = vis.data
+            .filter(d => d.Marathon === vis.selectedMarathon && d.Country !== null)
+            .sort((a, b) => a.Seconds - b.Seconds);
 
-            vis.svg.selectAll("text")
-                .attr("x", d => d.x)
-                .attr("y", d => d.y);
+        // Sort countries by the lowest seconds and get the top 10
+        let topCountryRunners = {};
+        filteredData.forEach(d => {
+            // If the country hasn't been added yet, add the runner
+            if (!topCountryRunners[d.Country]) {
+                topCountryRunners[d.Country] = d;
+            }
+        });
+
+        let topCountriesData = Object.values(topCountryRunners).slice(0, 10);
+        let topCountries = topCountriesData.map(d => d.Country);
+
+        // Set the fixed positions for top countries and marathon node
+        let marathonNode = vis.nodes.find(d => d.id === vis.selectedMarathon && d.group === 'Marathon');
+        if (marathonNode) {
+            marathonNode.fx = 200;
+            marathonNode.fy = vis.height / 2; // Slightly offset from the top
         }
 
-        vis.simulation.nodes(vis.nodes).on("tick", ticked);
-        vis.simulation.force("link").links(vis.links);
-        vis.simulation.alpha(1).restart();
+        // Calculate vertical spacing for top countries
+        let spacing = (vis.height - 100) / (topCountries.length + 1);
+
+        vis.nodes.forEach(node => {
+            if (node.group === 'Country') {
+                if (topCountries.includes(node.id)) {
+                    let index = topCountries.indexOf(node.id);
+                    node.fx = vis.width / 2;
+                    node.fy = 100 + (index * spacing); // Align vertically below the marathon node
+                } else {
+                    // Release other countries not in top 10
+                    node.fx = null;
+                    node.fy = null;
+                }
+            }
+        });
+
+        vis.simulation
+            .force("radial", d3.forceRadial(function(d) {
+                return topCountries.includes(d.id) ? 0 : 150;
+            }, marathonNode.fx, marathonNode.fy).strength(0.8))
+            .alpha(1) // Reset alpha to 'hot-start' the simulation
+            .restart();
+
+        // Update the bar rectangles for the top 10 countries
+        vis.svg.selectAll('.bar').remove();
+        vis.svg.selectAll('.bar-label').remove();
+        vis.svg.selectAll('.bar-label-group').remove();
+
+        let barWidthMultiplier = 2.8;
+
+        topCountriesData.forEach(d => {
+            let countryNode = vis.nodes.find(node => node.id === d.Country);
+            if (countryNode) {
+                // Append a rectangle for the bar
+                let barWidth = d.Seconds / 100 * barWidthMultiplier; // Increase width of the bar
+                vis.svg.append('rect')
+                    .attr('class', 'bar')
+                    .attr('x', countryNode.fx + 80) // Position next to the node
+                    .attr('y', countryNode.fy - 5) // Center vertically
+                    .attr('width', barWidth) // Width based on time
+                    .attr('height', 10)
+                    .attr('fill', 'steelblue');
+
+                // Create group for text to unify labels
+                let textGroup = vis.svg.append('g')
+                    .attr('class', 'bar-label-group')
+                    .attr('transform', `translate(${countryNode.fx + 80 + barWidth + 10}, ${countryNode.fy + 4})`); // Position to the right of the bar
+
+                // Append text for the seconds
+                textGroup.append('text')
+                    .text(d.Seconds + 's') // The seconds data
+                    .attr('fill', 'black')
+                    .style('font-size', '13px')
+                    .style('font-weight', 'bold')
+                    .style('text-anchor', 'start');
+
+                let secondsWidth = textGroup.node().getBBox().width; // Get the bounding box width of the text group
+
+                // Append text for the runner's last name
+                textGroup.append('text')
+                    .attr('x', secondsWidth + 10) // Add some space after seconds
+                    .text(d.Last_Name + ",") // Last name followed by comma
+                    .attr('fill', 'black')
+                    .style('font-size', '12px')
+                    .style('text-anchor', 'start');
+
+                // Append text for the runner's first name
+                let lastNameWidth = textGroup.node().getBBox().width - secondsWidth; // Calculate the width after appending last name
+                textGroup.append('text')
+                    .attr('x', secondsWidth + lastNameWidth + 5) // Add some space after last name
+                    .text(d.First_Name)
+                    .attr('fill', 'black')
+                    .style('font-size', '12px')
+                    .style('text-anchor', 'start');
+
+                // Append text for the year
+                let fullNameWidth = textGroup.node().getBBox().width - secondsWidth - lastNameWidth; // Calculate the width after appending full name
+                textGroup.append('text')
+                    .attr('x', secondsWidth + lastNameWidth + fullNameWidth + 10) // Add some space after full name
+                    .text(d.Year) // Assuming Year is a property of your data
+                    .attr('fill', 'black')
+                    .style('font-size', '10px')
+                    .style('text-anchor', 'start');
+            }
+        });
     }
 }
