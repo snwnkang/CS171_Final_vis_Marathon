@@ -219,7 +219,7 @@ body, html {
     text-align: center;
     line-height: 40px;
     cursor: pointer;
-    margin: 55px;
+    margin: 45px;
     font-weight: bold;
     font-size: 14px;
     vertical-align: middle;
@@ -230,4 +230,29 @@ body, html {
 /* Style for the selected button */
 .marathon-button.selected {
     transform: scale(1.5);
+}
+
+#showTop10Button {
+    display: block;
+    margin: 1px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #62807e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#showTop10Button:hover {
+    background-color: #324241;
+}
+
+#showTop10Button:active {
+    background-color: #455b5a;
+}
+
+#showTop10Button:focus {
+    outline: none;
 }

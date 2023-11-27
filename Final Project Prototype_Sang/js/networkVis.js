@@ -396,13 +396,17 @@ class NetworkVis {
             if (countryNode) {
                 // Append a rectangle for the bar
                 let barWidth = d.Seconds / 100 * barWidthMultiplier; // Increase width of the bar
-                vis.svg.append('rect')
+                let bar = vis.svg.append('rect')
                     .attr('class', 'bar')
                     .attr('x', countryNode.fx + 80) // Position next to the node
                     .attr('y', countryNode.fy - 5) // Center vertically
-                    .attr('width', barWidth) // Width based on time
+                    .attr('width', 0) // Start with 0 width for the animation
                     .attr('height', 10)
-                    .attr('fill', 'steelblue');
+                    .attr('fill', '#88a4a2');
+
+                bar.transition()
+                    .duration(1200) // Duration in milliseconds for the animation
+                    .attr('width', barWidth);
 
                 // Create group for text to unify labels
                 let textGroup = vis.svg.append('g')
@@ -411,23 +415,21 @@ class NetworkVis {
 
                 // Append text for the seconds
                 textGroup.append('text')
-                    .text(d.Seconds + 's') // The seconds data
+                    .text(d.Time)
                     .attr('fill', 'black')
                     .style('font-size', '13px')
                     .style('font-weight', 'bold')
                     .style('text-anchor', 'start');
 
-                let secondsWidth = textGroup.node().getBBox().width; // Get the bounding box width of the text group
+                let secondsWidth = textGroup.node().getBBox().width;
 
-                // Append text for the runner's last name
                 textGroup.append('text')
-                    .attr('x', secondsWidth + 10) // Add some space after seconds
-                    .text(d.Last_Name + ",") // Last name followed by comma
+                    .attr('x', secondsWidth + 10)
+                    .text(d.Last_Name + ",")
                     .attr('fill', 'black')
                     .style('font-size', '12px')
                     .style('text-anchor', 'start');
 
-                // Append text for the runner's first name
                 let lastNameWidth = textGroup.node().getBBox().width - secondsWidth; // Calculate the width after appending last name
                 textGroup.append('text')
                     .attr('x', secondsWidth + lastNameWidth + 5) // Add some space after last name
@@ -436,11 +438,10 @@ class NetworkVis {
                     .style('font-size', '12px')
                     .style('text-anchor', 'start');
 
-                // Append text for the year
                 let fullNameWidth = textGroup.node().getBBox().width - secondsWidth - lastNameWidth; // Calculate the width after appending full name
                 textGroup.append('text')
                     .attr('x', secondsWidth + lastNameWidth + fullNameWidth + 10) // Add some space after full name
-                    .text(d.Year) // Assuming Year is a property of your data
+                    .text(d.Year)
                     .attr('fill', 'black')
                     .style('font-size', '10px')
                     .style('text-anchor', 'start');
