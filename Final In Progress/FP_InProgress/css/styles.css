@@ -1,0 +1,431 @@
+.mapTooltip, .barTooltip {
+    position: absolute;
+    text-align: center;
+    font: 12px sans-serif;
+    /*  pointer-events: none;	This line needs to be removed */
+}
+.tooltip h3,h4 {
+    text-align: left;
+}
+.tooltip h4 {
+    font: 14px sans-serif;
+}
+
+/****************/
+/*  leaflet map */
+/****************/
+
+.city-label-tooltip {
+    background-color: #F7F5CC !important;
+    border-radius: 6px !important;
+    color: #053F1F !important;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 4px 6px;
+    text-align: center;
+}
+
+.connection {
+    stroke: black;
+    stroke-dasharray: 5;
+    stroke-width: 3px;
+    opacity: 0.7;
+}
+
+.selectpicker {
+    padding: 10px;
+}
+
+.node-text {
+    font-family: 'Arial', sans-serif;
+    fill: #333;
+}
+
+.my-non-svg-elements {
+    transform-origin: 0px 0px;
+}
+
+.marathon-text {
+    font-weight: bold;
+    font-size: 12px;
+    fill: #555;
+}
+
+.country-text {
+    font-weight: bold;
+    font-size: 9px;
+    fill: #777;
+}
+
+.subheader {
+    font-size: 14px;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+.title-text {
+    font-family: sans-serif;
+    font-size: 100px;
+    letter-spacing: 15px;
+    text-align: center;
+    font-weight: bolder;
+    color: #ED702A;
+}
+
+.title-text, .intro-description, .scroll-text p {
+    color: #ED702A; /* Your chosen text color */
+    -webkit-text-stroke: 0.5px black; /* Black outline */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Optional: Add shadow for further contrast */
+}
+
+#section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.section2text-container {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.section3intro {
+    text-align: center;
+}
+
+.section3-description-row {
+    height: 50px;
+}
+
+.section3descriptions1 {
+    font-size: 0.85em; /* Reduce font size if necessary */
+    line-height: 1.2;
+    text-align: center;
+}
+
+.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 150px;
+    box-sizing: border-box;
+}
+
+#dotDiv {
+    height: 20rem;
+    width: 100%;
+}
+
+.inline-div {
+    display: inline-block;
+    width: 500px;
+    height: 50px;
+    margin: 10px;
+}
+
+
+/****************/
+/*    SLIDER    */
+/****************/
+
+#time-period-slider {
+    width: 200px;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.range-slider-value {
+    background-color: #EFE9E9;
+    color: #888;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.noUi-connect {
+    background: teal;
+}
+
+/* Important: Scroll Functionality for web */
+
+#navigation {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000; /* Increased z-index */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: grey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+.circle.active {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 20px;
+    background-color: blue;
+    transform: translateX(-50%) translateY(-2.5px);
+}
+
+.section {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#section1 {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/marathonanimation.gif') no-repeat center center;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+#section1 .text-center {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.intro-description {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    font-size: 23px;
+    color: #ED702A;
+}
+
+.scroll-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    text-align: center;
+    color: #ED702A;
+    z-index: 2;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent overall page scroll */
+}
+
+#popularity-chart {
+    min-height: 300px; /* Adjust as needed */
+}
+
+#fact-vis {
+    height: auto;
+    min-height: 400px;
+    position: relative;
+    top: -80px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 120px;
+    height: 50px;
+    padding: 4px;
+    font: 14px sans-serif;
+    font-weight: bold;
+    background: #F7F5CC;
+    border: 2px solid #354d5f; /* Replace 'your-border-color' with your desired color */
+    border-radius: 8px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legend-label {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+#route-map {
+    margin-bottom: 30px;
+}
+
+#yearRangeSlider.custom-slider .noUi-connect {
+    background: #b8c7c4;
+    width: 100%; /* Adjust the width as needed */
+}
+
+#yearRangeSlider.custom-slider {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Style for the marathon buttons container */
+.button-container {
+    text-align: center; /* Center the buttons horizontally */
+}
+
+/* Style for the marathon buttons (circles) */
+.marathon-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 45px;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transform-origin: center;
+}
+
+/* Style for the selected button */
+.marathon-button.selected {
+    transform: scale(1.5);
+}
+
+#showTop10Button {
+    display: block;
+    margin: 1px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #62807e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#showTop10Button:hover {
+    background-color: #324241;
+}
+
+#showTop10Button:active {
+    background-color: #455b5a;
+}
+
+#showTop10Button:focus {
+    outline: none;
+}
+
+#intro-gif {
+    width: 95%;
+    height: 50rem;
+    padding: 10px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+}
+
+#dotDiv {
+    height: 50rem;
+    width: 100%;
+}
+
+.country.highlighted {
+    fill: #FD941C;
+}
+
+.bar-label {
+    font-weight: bold;
+}
+
+#mapDivTitle {
+    text-align: center;
+}
+
+.largeTooltip {
+    position: absolute;
+    text-align: left;
+    width: 200px;
+    height: 180px;
+    padding: 4px;
+    font: 14px sans-serif;
+    font-weight: bold;
+    background: #F7F5CC;
+    border: 2px solid #354d5f; /* Replace 'your-border-color' with your desired color */
+    border-radius: 8px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.largerTooltip {
+    position: absolute;
+    text-align: left;
+    width: 200px;
+    height: 225px;
+    padding: 4px;
+    font: 14px sans-serif;
+    font-weight: bold;
+    background: #F7F5CC;
+    border: 2px solid #354d5f; /* Replace 'your-border-color' with your desired color */
+    border-radius: 8px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.map-dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mapYearRangeSlider.custom-slider .noUi-tooltip {
+    top: 120%;
+    /*padding-top: 1vh;*/
+    padding-bottom: 3vh;
+    /*transform: translateY(50px);*/
+}
+
+#mapYearRangeSlider.custom-slider .noUi-connect {
+    background: #b8c7c4;
+}
+
+.stackedBarAxisLabel {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stackedBarLegendLabel {
+    font-size: 14px;
+    font-weight: bold;
+}

@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Marathon - Prototype V1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.css" integrity="sha512-DGB74Gyw93qON+V0QxSRs1er6sqoPyFoy23HBL5LN7MRJBcjeCU22zega+vOEGE0XQLoVrv4ExcaesSTwZQA2w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <script src="js/leaflet.js"></script>
+    <script src="js/L.Polyline.SnakeAnim.js"></script>
+
+</head>
+<body>
+
+<!-- WRAPPER -->
+<div class="container-fluid">
+
+    <!-- SECTION 1 -->
+    <div class="section" id="section1">
+        <div class="background-gif">
+        </div>
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col text-center">
+                    <h1 class="title-text">VIS - MARATHON</h1>
+                    <h5 class="intro-description">Every year, over 1 million individual runners run a marathon. Marathoners come from all walks of life, from teens to the elderly, beginners to olympians—yet they are unified by a single goal of running 26.2 miles, a physical feat achievable by anybody with the heart to do so.</h5>
+                </div>
+            </div>
+            <div class="scroll-text">
+                <p class="text-center">Scroll down to begin!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="section2">
+        <div class="row justify-content-center">
+            <div class="section2text-container">
+                <h3>Boston Marathon</h3>
+                <p>Known as the oldest yearly Marathon held in the world, Boston Marathon upholds its prestige and historical significance as one of the world's most prestigious road racing events. Inaugurated in 1897, Boston Marathon has since attracted thousands of runners across the world every year.</p>
+                <p>Let us begin our exploration here, as this is the marathon we Harvard students most likely have stumbled upon on race day.</p>
+                <p>The traditional route for Boston Marathon has long been defined by its start at Hopkinton up to Downtown Boston.</p>
+                <p>Let's continue looking, scroll down!</p>
+            </div>
+            <div id="route-map" style="height:500px;"></div>
+        </div>
+    </div>
+
+    <div class="section" id="section3">
+        <div class="row justify-content-center">
+            <div class="section3intro">
+                <h3>How has the Marathon grown in popularity over the years?</h3>
+                <hr>
+
+                <p>Adjust the bar to observe the changes in participation trend of the Boston Marathon from 1900 to present 2023.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="yearRangeSlider" class="custom-slider"></div>
+            <div id="popularity-chart"></div>
+        </div>
+        <div class="row justify-content-center section3-description-row">
+            <div class="section3descriptions1">
+                <p style="font-weight: bold;">Did you notice?</p>
+                <p>Boston Marathon became the first marathon race that officially admitted women runners in 1972!</p>
+                <p>What other interesting facts were there in the marathon over the years?</p>
+            </div>
+            <div id="fact-vis" class="fact-vis-container"></div>
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+<!--    <div class="section" id="section3">-->
+<!--        <div class="row">-->
+<!--            <h3>Who's up front?</h3>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <h5>We've seen the route and seen that the running pool is large... but who are these thousands of people, and where do they come from?</h5>-->
+<!--            <h5>Focusing in on Boston's 2019 marathon, the largest of recent years, let's see where our top finishers are coming from.</h5>-->
+<!--            <div class="col">-->
+
+<!--                &lt;!&ndash; Updating Boston Marathon World Map &ndash;&gt;-->
+
+<!--                <h5 id="criteria-title">All Finishers</h5>-->
+<!--                <div class="row">-->
+<!--                    <div id="bostonMapDiv" style="height: 71vh; width: 100%;"></div>-->
+<!--                </div>-->
+<!--                <h5>Two countries seem to be especially present up front...</h5>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="section" id="section4.1">
+<!--        <h3>But the Boston Marathon is far from the only major marathon in the world </h3>-->
+<!--        <h5>In fact, the six "World Major Marathons" across the globe are in Boston, Berlin, New York City, Chicago, New York City, and Tokyo. We see some interesting trends for the top field specifically in Boston 2019, but are these trends that uphold across other marathons? Let's increase our sample size to find out.</h5>-->
+<!--        <h5>Take a moment to explore the map below to explore who is up front in five of these six marathons!</h5>-->
+<!--        <text>*Data was not available for the Tokyo Marathon.</text>-->
+            <div class="row">
+                <h2 id="mapDivTitle" >Demographics of Boston 2019 Runners</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="mapDiv" style="height: 80vh; width: 100%;"></div>
+                </div>
+                <div class="col-md-3">
+
+<!--                Dropdown for Finisher Type-->
+                    <div class="row">
+                        <h4>Select Finisher Type</h4>
+                        <select id='mapCriteriaSelector' class="btn btn-dark custom-select align-self-center" style="width: 90%" onchange="criteriaChange()">
+                            <option value="all" selected>All Finishers</option>
+                            <option value="topHundred">Top 100 Finishers</option>
+                            <option value="topThree">Top 3 Finishers</option>
+                            <option value="winner">Winners</option>
+                        </select>
+                    </div>
+
+
+                    <!--                Dropdown for Gender-->
+                    <div class="row">
+                        <h4>Select Sex</h4>
+                        <ul class="map-dropdown">
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="btn btn-dark dropdown-toggle" style="width: 90%">Sexes<b class="caret"></b></a>
+                                <ul class="dropdown-menu" style="width: 90%">
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="maleCheckbox" name="male" checked>Male
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="femaleCheckbox" name="female" checked>Female
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--                Dropdown for Marathon Selection-->
+                    <div class="row">
+                        <h4 id="map-marathon-title">Select Marathons</h4>
+                        <ul class="map-dropdown">
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="btn btn-dark dropdown-toggle" style="width: 90%" id="marathon-dropdown">Marathons<b class="caret"></b></a>
+                                <ul class="dropdown-menu" style="width: 90%">
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="bostonCheckbox" checked>Boston
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="nyCheckbox" checked>New York
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="chicagoCheckbox" checked>Chicago
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="londonCheckbox" checked>London
+                                            </label>
+                                        </div>
+                                    </li>
+<!--                                    <li>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label>-->
+<!--                                                <input type="checkbox" id="berlinCheckbox" checked>Berlin-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--                Slider for Year-->
+                    <div class="row">
+                        <h4 id="map-year-title">Select Years</h4>
+                        <div id="mapYearRangeSlider" class="custom-slider" style="width: 90%"></div>
+                    </div>
+
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-9">
+
+                <h4>But Boston is far from the only major marathon! Click here to see who's up front in 4 different World Major Marathons!</h4>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-dark align-self-center" type="button" id="mapDataSourceButton"
+                        style="width: 90% !important; background-color: #C54644;"
+                    onclick="updateMapDataSource()"">Show Data from All Marathons
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="section" id="section4.2">
+<!--        <h4>Above, it seemd like Kenya and Ethiopia had a lot more top finishes than other countries but fewer overall entries. But why?</h4>-->
+<!--        <h4>Could this be due to a few repeat winners? Let's take a look.</h4>-->
+<!--        <text>Press the button below to toggle between Top 3 Finishers and Winners</text>-->
+        <div class="row text-center">
+            <h2 id="stackedBarTitle">Countries with the Most Winners</h2>
+            <div class="col align-self-center">
+                <!-- Stacked Bar Chart -->
+                <button class="btn btn-dark align-self-center" type="button" id="stackedBarUpdateButton" style="width: 90% !important;"
+                        onclick="updateStackedBar()">Toggle to Top 3 Finishers
+                </button>
+            </div>
+            <div class="col">
+                <div id="stackedBarLegend" style="height: 3vh; width: 90%;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="stackedBar" style="height: 71vh; width: 100%;"></div>
+        </div>
+    </div>
+
+    <!-- SECTION 4-->
+    <div class="section" id="section5">
+        <div class="row">
+            <h3>The individuals</h3>
+            <h5>We've considered repeat winners and who they are... let's expand to see where these top runners, and those just behind them, fall in the top 100 of each world marathon major. Perhaps the demographic composition stands out in a particular way here?</h5>
+            <h5>Explore the plots below, focusing on specific views of the top racing fields, as well as highlighting runners from particular nations.</h5>
+        </div>
+
+        <!--
+        <div class="row">
+            <h5>Let's bring you into the story—specifically, into Boston 2019, the largest edition of the historic marathon to date.</h5>
+            <p>Enter information about yourself below to see how you, and others like you, would've fared in the 2019 Boston Marathon.</p>
+            <br>
+
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name"><br><br>
+
+            <label for="ageInput">Age:</label>
+            <input type="number" id="ageInput" placeholder="Enter your age"><br><br>
+
+            <label for="homeInput">Home Country (or state if USA):</label>
+            <select id="homeInput", name="homeInput">
+                <option value id="MA">USA - Massachusetts</option>
+                <option value id="CA">USA - California</option>
+                <option value id="JPN">Japan</option>
+                <option value id="KEN">Kenya</option>
+                <option value id="ETH">Ethiopia</option>
+                <br><br>
+            </select>
+
+            <label for="paceInput">Approx. mile pace:</label>
+            <input type="time" id="paceInput"><br><br>
+
+            <input type="submit" value="Submit">
+
+        </div><br>
+        -->
+
+        <div class="row">
+            <!-- filter area -->
+            <div class="inline-div">
+                <!-- y-axis attribute dropdown selector -->
+                <label for="attribute-selector"><b>Country to highlight: </b></label>
+                <select id="attribute-selector">
+                    <option value="KEN">Kenya</option>
+                    <option value="ETH">Ethiopia</option>
+                    <option value="JPN">Japan</option>
+                    <option value="USA">United States of America</option>
+                </select>
+            </div>
+            <div class="inline-div">
+                <!-- year range slider -->
+                <div id="slider"></div>
+            </div>
+            <div class="col-md-12">
+                <div id="dotDiv"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section" id="section6">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="subheader">Participating Countries per Marathon</h3>
+            </div>
+            <div class="col-md-12">
+                <div id="network-vis"></div>
+                <div class="top10button">
+                    <button id="showTop10Button" style="display: none;">Top Performers</button>
+                </div>
+                <div id="marathonButtons" class="button-container">
+                    <div class="marathon-button selected" data-marathon="all" style="background-color: #999;">All</div>
+                    <div class="marathon-button" data-marathon="Boston" style="background-color: #8dae86;">BOS</div>
+                    <div class="marathon-button" data-marathon="London" style="background-color: #ae9b86;">LON</div>
+                    <div class="marathon-button" data-marathon="Chicago" style="background-color: #9886ae;">CHI</div>
+                    <div class="marathon-button" data-marathon="Berlin" style="background-color: #81a3b3;">BER</div>
+                    <div class="marathon-button" data-marathon="New York" style="background-color: #ae8692;">NY</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SECTION 6 -->
+    <div class="section" id="section7">
+        <div class="row">
+            <div id="violinDiv"></div>
+        </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section" id="section8">
+
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="section" id="section9">
+
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="section" id="section10">
+
+    </div>
+
+    <div id="navigation">
+        <div class="circle" data-target="#section1"></div>
+        <div class="circle" data-target="#section2"></div>
+        <div class="circle" data-target="#section3"></div>
+        <div class="circle" data-target="#section4"></div>
+        <div class="circle" data-target="#section5"></div>
+        <div class="circle" data-target="#section6"></div>
+        <div class="circle" data-target="#section7"></div>
+        <div class="circle" data-target="#section8"></div>
+    </div>
+
+
+
+
+
+
+
+<!--    <div class="row">-->
+<!--        <h5>Is there a hometown advantage—how do the local runners of a marathon major compare to visitors?</h5>-->
+<!--        <p>At most marathon majors, runners from the host country are often overrepresented in the facing field, whether due to registration limits or simply proximity. But does this overrepresentation extend into the top end of the pack? How do hometown runners fare against the best?</p>-->
+
+<!--        <em>(placeholder, add visualization like dot plot where local runners can be highlighted on an axis of performance)</em>-->
+<!--    </div><br><br>-->
+
+<!--    <div class="row">-->
+<!--        <h5>What age are top runners, and is there a prime for performance?</h5>-->
+<!--        <img src="img/age_tableau.png" style="width: 100%; height: 100%">-->
+<!--    </div><br><br>-->
+
+<!--    <div class="row">-->
+<!--        <h5>How does gender factor in?</h5>-->
+<!--        <img src="img/gender.png" style="width: 80%; height: 100%">-->
+<!--    </div><br><br>-->
+
+
+
+<!--    <div class="row">-->
+<!--        <h5>How fast do you have to run to keep up with top runners?</h5>-->
+
+<!--        <em>(ANIMATION - shape of a track with dots, representing runners, traveling around. dot speeds are running speeds calculated from marathon finish times. there is one dot for the user, and other dots can represent the winner of the selected year’s Boston marathon, the fastest runner of the same demographic profile as the user, and the average speed of all runners of the same demographic profile as the user)</em>-->
+<!--    </div><br><br>-->
+
+
+</div>
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.js"
+        integrity="sha512-mZXUH8DAODwCHioWP3gltQwa953LbABMlzTYwYkKqv8eNxOk37B1HgNNuCMfFxgrpW5C34WJbxPDcM58+s1dJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<!-- OWN JS -->
+<script src="js/scroll.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/stackedBar.js"></script>
+<script src="js/networkVis.js"></script>
+<script src="js/marathonMapVis.js"></script>
+<script src="js/popularityVis.js"></script>
+<script src="js/dotVis.js"></script>
+<script src="js/violinVis.js"></script>
+<script src="js/factVis.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkboxListeners.js"></script>
+</body>
+</html>

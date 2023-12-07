@@ -1,0 +1,283 @@
+Unnamed: 0,Last Name,First Name,Division,Country,BIB,Overall Place,Time,Seconds,Year,Gender,Marathon
+5803,tsegaye,tirfi,30,ETH,F3,24.0,02:20:18,8418.0,2014.0,F,Berlin
+5806,tadese,feyse,H,ETH,F2,27.0,02:20:27,8427.0,2014.0,F,Berlin
+5810,flanagan,shalane,30,USA,F4,31.0,02:21:14,8474.0,2014.0,F,Berlin
+9308,rita,jeptoo,30-34,,,,2:18:57,8337.0,2014.0,F,Boston
+9309,buzunesh,deba,25-29,,,,2:19:59,8399.0,2014.0,F,Boston
+9310,mare,dibaba,20-24,,,,2:20:35,8435.0,2014.0,F,Boston
+2000,dibaba,mare,20-24,ETH,103,50,02:25:37,8737.0,2014.0,F,Chicago
+2001,kiplagat,florence,25-29,KEN,102,53,02:25:57,8757.0,2014.0,F,Chicago
+2002,dibaba,birhane,20-24,ETH,106,61,02:27:02,8822.0,2014.0,F,Chicago
+0,duncan,nicola,18-39,IRL,426,69,2:33:28,9208.0,2014.0,F,London
+1,briscoe,julie,18-39,GBR,374,191,2:39:43,9583.0,2014.0,F,London
+2,bird,sara,18-39,GBR,521,197,2:39:55,9595.0,2014.0,F,London
+3800,mary,keitany,30-34,KEN,104,25,2:25:07,8707.0,2014.0,F,New York
+3801,jemima,sumgong,25-29,KEN,106,27,2:25:10,8710.0,2014.0,F,New York
+3802,sara,moreira,25-29,POR,116,31,2:26:00,8760.0,2014.0,F,New York
+6027,cherono,gladys,30,KEN,F2,48.0,02:19:25,8365.0,2015.0,F,Berlin
+6034,kebede,aberu,H,ETH,F3,55.0,02:20:48,8448.0,2015.0,F,Berlin
+6050,hailu,meseret,H,ETH,F4,71.0,02:24:33,8673.0,2015.0,F,Berlin
+9408,caroline,rotich,30-34,KEN,F11,30.0,2:24:55,8695.0,2015.0,F,Boston
+9409,mare,dibaba,25-29,ETH,F2,31.0,2:24:59,8699.0,2015.0,F,Boston
+9410,buzunesh,deba,25-29,ETH,F1,33.0,2:25:09,8709.0,2015.0,F,Boston
+2200,kiplagat,florence,25-29,KEN,101,33,02:23:33,8613.0,2015.0,F,Chicago
+2201,melese,yebrgual,25-29,ETH,106,35,02:23:43,8623.0,2015.0,F,Chicago
+2202,dibaba,birhane,20-24,ETH,102,40,02:24:24,8664.0,2015.0,F,Chicago
+200,radcliffe,paula,40-44,GBR,25371,203,2:36:55,9415.0,2015.0,F,London
+201,connolly,breege,18-39,GBR,417,220,2:37:24,9444.0,2015.0,F,London
+202,spink,jenny,18-39,GBR,379,225,2:37:35,9455.0,2015.0,F,London
+3998,mary,keitany,30-34,KEN,101,19,2:24:25,8665.0,2015.0,F,New York
+3999,aselefech,mergia,30-34,ETH,109,21,2:25:32,8732.0,2015.0,F,New York
+4000,tigist,tufa,25-29,ETH,105,22,2:25:50,8750.0,2015.0,F,New York
+6213,kebede,aberu,30,ETH,F1,34.0,02:20:45,8445.0,2016.0,F,Berlin
+6221,dibaba,birhane,H,ETH,F3,42.0,02:23:58,8638.0,2016.0,F,Berlin
+6227,aga,ruti,H,ETH,F5,48.0,02:24:41,8681.0,2016.0,F,Berlin
+9508,atsede,baysa,25-29,ETH,F6,29.0,2:29:19,8959.0,2016.0,F,Boston
+9509,tirfi,tsegaye,30-34,ETH,F4,33.0,2:30:03,9003.0,2016.0,F,Boston
+9510,joyce,chepkirui,25-29,KEN,F11,36.0,2:30:50,9050.0,2016.0,F,Boston
+2400,kiplagat,florence,25-29,KEN,101,23,02:21:32,8492.0,2016.0,F,Chicago
+2401,kiplagat,edna,35-39,KEN,102,28,02:23:28,8608.0,2016.0,F,Chicago
+2402,kipketer,valentine,20-24,KEN,104,30,02:23:41,8621.0,2016.0,F,Chicago
+400,barlow,tracy,18-39,GBR,289,125,2:33:20,9200.0,2016.0,F,London
+401,muir,tina,18-39,GBR,645,214,2:37:35,9455.0,2016.0,F,London
+402,munn,hayley,18-39,GBR,494,228,2:38:04,9484.0,2016.0,F,London
+4196,mary,keitany,30-34,KEN,101,25,2:24:26,8666.0,2016.0,F,New York
+4197,sally,kipyego,30-34,KEN,108,35,2:28:01,8881.0,2016.0,F,New York
+4198,molly,huddle,30-34,USA,111,36,2:28:13,8893.0,2016.0,F,New York
+6432,cherono,gladys,30,KEN,F2,53.0,02:20:23,8423.0,2017.0,F,Berlin
+6433,aga,ruti,H,ETH,F7,54.0,02:20:41,8441.0,2017.0,F,Berlin
+6434,aiyabei,valary,H,KEN,F4,55.0,02:20:53,8453.0,2017.0,F,Berlin
+9608,edna,kiplagat,35-39,KEN,F3,20.0,2:21:52,8512.0,2017.0,F,Boston
+9609,rose,chelimo,25-29,BRN,F11,23.0,2:22:51,8571.0,2017.0,F,Boston
+9610,jordan,hasay,25-29,USA,F23,24.0,2:23:00,8580.0,2017.0,F,Boston
+2600,dibaba,tirunesh,30-34,ETH,103,22,02:18:31,8311.0,2017.0,F,Chicago
+2601,kosgei,brigid,20-24,KEN,107,26,02:20:22,8422.0,2017.0,F,Chicago
+2602,hasay,jordan,25-29,USA,106,27,02:20:57,8457.0,2017.0,F,Chicago
+600,boniface,anna,18-39,GBR,666,201,2:37:07,9427.0,2017.0,F,London
+601,clements,amy,18-39,GBR,823,287,2:39:11,9551.0,2017.0,F,London
+602,davis,julia,18-39,GBR,715,298,2:39:27,9567.0,2017.0,F,London
+4394,shalane,flanagan,35-39,USA,108,20,2:26:53,8813.0,2017.0,F,New York
+4395,mary,keitany,35-39,KEN,101,24,2:27:54,8874.0,2017.0,F,New York
+4396,mamitu,daska,30-34,ETH,105,26,2:28:08,8888.0,2017.0,F,New York
+6601,cherono,gladys,35,KEN,F1,22.0,02:18:11,8291.0,2018.0,F,Berlin
+6602,aga,ruti,H,ETH,F5,23.0,02:18:34,8314.0,2018.0,F,Berlin
+6603,dibaba,tirunesh,30,ETH,F2,24.0,02:18:55,8335.0,2018.0,F,Berlin
+9708,desiree,linden,30-34,USA,,143,2:39:54,9594.0,2018.0,F,Boston
+9709,sarah,sellers,25-29,USA,,262,2:44:04,9844.0,2018.0,F,Boston
+9710,krista,duchene,40-44,CAN,,272,2:44:20,9860.0,2018.0,F,Boston
+2800,kosgei,brigid,20-24,KEN,103,24,02:18:35,8315.0,2018.0,F,Chicago
+2801,dereje,roza,20-24,ETH,104,36,02:21:18,8478.0,2018.0,F,Chicago
+2802,demise,shure,20-24,ETH,107,40,02:22:15,8535.0,2018.0,F,Chicago
+800,porter,georgia,18-39,USA,970,271,2:44:50,9890.0,2018.0,F,London
+801,oldroyd,hannah,18-39,GBR,619,294,2:46:27,9987.0,2018.0,F,London
+802,bowman,laura,18-39,USA,849,297,2:46:36,9996.0,2018.0,F,London
+4592,mary,keitany,35-39,KEN,102,26,2:22:48,8568.0,2018.0,F,New York
+4593,vivian,cheruiyot,35-39,KEN,104,32,2:26:02,8762.0,2018.0,F,New York
+4594,shalane,flanagan,35-39,USA,101,34,2:26:22,8782.0,2018.0,F,New York
+6851,bekere,ashete,30,ETH,F6,72.0,02:20:14,8414.0,2019.0,F,Berlin
+6855,dibaba,mare,30,ETH,F3,76.0,02:20:21,8421.0,2019.0,F,Berlin
+6860,chepyego,sally,30,KEN,F27,81.0,02:21:06,8466.0,2019.0,F,Berlin
+9808,worknesh,degefa,25-29,ETH,F2,36,2:23:31,8611.0,2019.0,F,Boston
+9809,edna,kiplagat,35-39,KEN,F4,38,2:24:13,8653.0,2019.0,F,Boston
+9810,jordan,hasay,25-29,USA,F7,48,2:25:20,8720.0,2019.0,F,Boston
+3000,kosgei,brigid,25-29,KEN,101,23,02:14:04,8044.0,2019.0,F,Chicago
+3001,yeshaneh,ababel,25-29,ETH,106,51,02:20:51,8451.0,2019.0,F,Chicago
+3002,burka,gelete,30-34,ETH,102,52,02:20:55,8455.0,2019.0,F,Chicago
+1000,larsson,mikaela,18-39,SWE,916,114,02:31:32,9092.0,2019.0,F,London
+1001,davis,stephanie,18-39,GBR,560,138,02:32:38,9158.0,2019.0,F,London
+1002,roman-duval,julia,18-39,FRA,919,273,02:37:15,9435.0,2019.0,F,London
+4790,joyciline,jepkosgei,25-29,KEN,106,31,2:22:38,8558.0,2019.0,F,New York
+4791,mary,keitany,35-39,KEN,101,34,2:23:32,8612.0,2019.0,F,New York
+4792,ruti,aga,25-29,ETH,103,39,2:25:51,8751.0,2019.0,F,New York
+1200,cheung,ping,45-49,HKG,2478,5,02:28:36,8916.0,2020.0,F,London
+1201,lockyer,donna,40-44,GBR,25676,63,02:41:15,9675.0,2020.0,F,London
+1202,seymour,natalie,18-39,GBR,12416,199,02:49:02,10142.0,2020.0,F,London
+4988,stephanie,bruce,35-39,USA,142537,11,2:35:28,9328.0,2020.0,F,New York
+4989,emily,sisson,25-29,USA,39354,21,2:38:00,9480.0,2020.0,F,New York
+4990,carmen,martínez,35-39,PAR,141715,76,2:48:42,10122.0,2020.0,F,New York
+7002,gebreslase,gotytom,H,ETH,F17,23.0,02:20:09,8409.0,2021.0,F,Berlin
+7004,gebrekidan,hiwot,H,ETH,F2,25.0,02:21:23,8483.0,2021.0,F,Berlin
+7007,tola,helen,H,ETH,F28,28.0,02:23:05,8585.0,2021.0,F,Berlin
+9008,diana,kipyokei,,,,40,02:24:45,8685.0,2021.0,F,Boston
+9009,edna,kiplagat,,,,41,02:25:09,8709.0,2021.0,F,Boston
+9010,mary,ngugi,,,,42,02:25:20,8720.0,2021.0,F,Boston
+3200,chepngetich,ruth,25-29,KEN,102,21,02:22:31,8551.0,2021.0,F,Chicago
+3201,bates,emma,25-29,USA,107,26,02:24:20,8660.0,2021.0,F,Chicago
+3202,hall,sara,35-39,USA,103,41,02:27:19,8839.0,2021.0,F,Chicago
+1400,flanagan,shalane,40-44,GBR,50203,190,02:35:04,9304.0,2021.0,F,London
+1401,richardson,chloe,18-39,GBR,220,246,02:37:08,9428.0,2021.0,F,London
+1402,webster,sarah,40-44,GBR,431,450,02:41:24,9684.0,2021.0,F,London
+5186,peres,jepchirchir,25-29,KEN,101,22,2:22:39,8559.0,2021.0,F,New York
+5187,viola,cheptoo,30-34,KEN,111,23,2:22:44,8564.0,2021.0,F,New York
+5188,ababel,yeshaneh,30-34,ETH,103,24,2:22:52,8572.0,2021.0,F,New York
+7212,assefa,tigist,H,ETH,F24,33.0,02:15:37,8137.0,2022.0,F,Berlin
+7223,wanjiru,rosemary,H,KEN,F25,44.0,02:18:00,8280.0,2022.0,F,Berlin
+7224,abayechew,tigist,H,ETH,F8,45.0,02:18:03,8283.0,2022.0,F,Berlin
+9108,peres,jepchirchir,,,,31,02:21:01,8461.0,2022.0,F,Boston
+9109,ababel,yeshaneh,,,,32,02:21:05,8465.0,2022.0,F,Boston
+9110,mary,ngugi,,,,33,02:21:32,8492.0,2022.0,F,Boston
+3400,chepngetich,ruth,25-29,KEN,101,25,02:14:18,8058.0,2022.0,F,Chicago
+3401,sisson,emily,30-34,USA,107,35,02:18:29,8309.0,2022.0,F,Chicago
+3402,kiplagat,vivian jerono,30-34,KEN,104,43,02:20:52,8452.0,2022.0,F,Chicago
+1600,alderson,hannah,18-39,GBR,1016,179,02:35:56,9356.0,2022.0,F,London
+1601,culling,anya,18-39,GBR,1010,191,02:36:21,9381.0,2022.0,F,London
+1602,nimmock,dani,18-39,GBR,1009,262,02:38:18,9498.0,2022.0,F,London
+5384,sharon,lokedi,25-29,KEN,114,19,2:23:23,8603.0,2022.0,F,New York
+5385,lonah chemtai,salpeter,30-34,ISR,105,20,2:23:30,8610.0,2022.0,F,New York
+5386,gotytom,gebreslase,25-29,ETH,103,22,2:23:39,8619.0,2022.0,F,New York
+7839,assefa,tigst,,ETH,,,02:11:53,7913.0,2023.0,F,Berlin
+7840,chepkirui,sheila,,KEN,,,02:17:49,8269.0,2023.0,F,Berlin
+7841,shauri,magdalena,,TAN,,,02:18:41,8321.0,2023.0,F,Berlin
+9208,hellen,obiri,30-34,,,36,02:21:38,8498.0,2023.0,F,Boston
+9209,amane,beriso,30-34,,,40,02:21:50,8510.0,2023.0,F,Boston
+9210,lonah,salpeter,30-34,,,41,02:21:57,8517.0,2023.0,F,Boston
+3600,hassan,sifan,30-34,NED,108,21,02:13:44,8024.0,2023.0,F,Chicago
+3601,chepngetich,ruth,25-29,KEN,101,24,02:15:37,8137.0,2023.0,F,Chicago
+3602,alemu,megertu,25-29,ETH,107,29,02:17:09,8229.0,2023.0,F,Chicago
+1800,bogantes gonzalez,diana,18-39,CRC,5972,232,02:33:40,9220.0,2023.0,F,London
+1801,hodgkinson,rachel,18-39,GBR,1424,278,02:34:46,9286.0,2023.0,F,London
+1802,gaunt,helen,40-44,GBR,1680,305,02:35:38,9338.0,2023.0,F,London
+5582,hellen,obiri,30-34,KEN,103,29,2:27:23,8843.0,2023.0,F,New York
+5583,letesenbet,gidey,25-29,ETH,105,30,2:27:29,8849.0,2023.0,F,New York
+5584,sharon,lokedi,25-29,KEN,101,32,2:27:33,8853.0,2023.0,F,New York
+5780,kimetto,dennis,30,KEN,2,1.0,02:02:57,7377.0,2014.0,M,Berlin
+5781,mutai,emmanuel,30,KEN,3,2.0,02:03:13,7393.0,2014.0,M,Berlin
+5782,kuma,abera,H,ETH,12,3.0,02:05:56,7556.0,2014.0,M,Berlin
+8408,meb,keflezighi,35-39,,,,2:08:37,7717.0,2014.0,M,Boston
+8409,wilson,chebet,25-29,,,,2:08:48,7728.0,2014.0,M,Boston
+8410,frankline,chepkwony,25-29,,,,2:08:50,7730.0,2014.0,M,Boston
+2100,kipchoge,eliud,25-29,KEN,2,1,02:04:11,7451.0,2014.0,M,Chicago
+2101,kitwara,sammy,25-29,KEN,6,2,02:04:28,7468.0,2014.0,M,Chicago
+2102,chumba,dickson,25-29,KEN,7,3,02:04:32,7472.0,2014.0,M,Chicago
+100,way,steven,18-39,GBR,943,1,2:16:27,8187.0,2014.0,M,London
+101,gilbert,john,18-39,GBR,851,2,2:16:46,8206.0,2014.0,M,London
+102,pepper,jon,18-39,GBR,1043,3,2:19:59,8399.0,2014.0,M,London
+3899,wilson,kipsang,30-34,KEN,2,1,2:10:59,7859.0,2014.0,M,New York
+3900,lelisa desisa,benti,20-24,ETH,4,2,2:11:06,7866.0,2014.0,M,New York
+3901,gebre,gebremariam,30-34,ETH,7,3,2:12:13,7933.0,2014.0,M,New York
+5980,kipchoge,eliud,30,KEN,4,1.0,02:04:00,7440.0,2015.0,M,Berlin
+5981,kiptanui,eliud,H,KEN,6,2.0,02:05:21,7521.0,2015.0,M,Berlin
+5982,lilesa,feyisa,H,ETH,5,3.0,02:06:57,7617.0,2015.0,M,Berlin
+8508,lelisa,desisa,25-29,ETH,3,0.0,2:09:17,7757.0,2015.0,M,Boston
+8509,yemane adhane,tsegay,30-34,ETH,4,1.0,2:09:48,7788.0,2015.0,M,Boston
+8510,wilson,chebet,25-29,KEN,8,2.0,2:10:22,7822.0,2015.0,M,Boston
+2300,chumba,dickson,25-29,KEN,3,1,02:09:25,7765.0,2015.0,M,Chicago
+2301,kitwara,sammy,25-29,KEN,2,2,02:09:50,7790.0,2015.0,M,Chicago
+2302,ndungu,sammy,25-29,KEN,10,3,02:10:06,7806.0,2015.0,M,Chicago
+300,kimpton,ian,18-39,GBR,1147,1,2:15:51,8151.0,2015.0,M,London
+301,gilbert,john,18-39,GBR,910,2,2:18:12,8292.0,2015.0,M,London
+302,scott,aaron,18-39,GBR,1252,3,2:20:45,8445.0,2015.0,M,London
+4097,stanley,biwott,25-29,KEN,5,1,2:10:34,7834.0,2015.0,M,New York
+4098,geoffery,kamworor,20-24,KEN,6,2,2:10:48,7848.0,2015.0,M,New York
+4099,lelisa,desisa,25-29,ETH,2,3,2:12:10,7930.0,2015.0,M,New York
+6180,bekele,kenenisa,30,ETH,5,1.0,02:03:03,7383.0,2016.0,M,Berlin
+6181,kipsang,wilson,30,KEN,3,2.0,02:03:13,7393.0,2016.0,M,Berlin
+6182,chebet,evans,H,KEN,8,3.0,02:05:31,7531.0,2016.0,M,Berlin
+8608,lemi berhanu,hayle,20-24,ETH,5,1.0,2:12:45,7965.0,2016.0,M,Boston
+8609,lelisa,desisa,25-29,ETH,1,2.0,2:13:32,8012.0,2016.0,M,Boston
+8610,yemane adhane,tsegay,30-34,ETH,6,3.0,2:14:02,8042.0,2016.0,M,Boston
+2500,kirui,abel,30-34,KEN,3,1,02:11:23,7883.0,2016.0,M,Chicago
+2501,chumba,dickson,25-29,KEN,1,2,02:11:26,7886.0,2016.0,M,Chicago
+2502,kipketer,gideon,20-24,KEN,7,3,02:12:20,7940.0,2016.0,M,Chicago
+500,hehir,sean,18-39,IRL,1000,1,2:17:20,8240.0,2016.0,M,London
+501,martelletti,paul,18-39,GBR,1288,2,2:17:26,8246.0,2016.0,M,London
+502,frazer,thomas,18-39,IRL,1316,3,2:19:17,8357.0,2016.0,M,London
+4295,ghirmay,ghebreslassie,20-24,ERI,2,1,2:07:51,7671.0,2016.0,M,New York
+4296,lucas,rotich,25-29,KEN,5,2,2:08:53,7733.0,2016.0,M,New York
+4297,abdi,abdirahman,35-39,USA,16,3,2:11:23,7883.0,2016.0,M,New York
+6380,kipchoge,eliud,30,KEN,2,1.0,02:03:32,7412.0,2017.0,M,Berlin
+6381,adola,guye,H,ETH,45,2.0,02:03:46,7426.0,2017.0,M,Berlin
+6382,geremew,mosinet,H,ETH,10,3.0,02:06:09,7569.0,2017.0,M,Berlin
+8708,geoffrey,kirui,20-24,KEN,11,0.0,2:09:37,7777.0,2017.0,M,Boston
+8709,galen,rupp,30-34,USA,17,1.0,2:09:58,7798.0,2017.0,M,Boston
+8710,suguru,osako,25-29,JPN,23,2.0,2:10:28,7828.0,2017.0,M,Boston
+2700,rupp,galen,30-34,USA,10,1,02:09:20,7760.0,2017.0,M,Chicago
+2701,kirui,abel,35-39,KEN,1,2,02:09:48,7788.0,2017.0,M,Chicago
+2702,kipyego,bernard,30-34,KEN,7,3,02:10:23,7823.0,2017.0,M,Chicago
+700,griffiths,josh,18-39,GBR,1154,1,2:14:49,8089.0,2017.0,M,London
+701,hehir,sean,18-39,GBR,1454,2,2:16:18,8178.0,2017.0,M,London
+702,sharp,matt,18-39,GBR,1825,3,2:17:45,8265.0,2017.0,M,London
+4493,geoffrey,kamworor,20-24,KEN,5,1,2:10:53,7853.0,2017.0,M,New York
+4494,wilson,kipsang,35-39,KEN,4,2,2:10:56,7856.0,2017.0,M,New York
+4495,lelisa,desisa,25-29,ETH,7,3,2:11:32,7892.0,2017.0,M,New York
+6580,kipchoge,eliud,30,KEN,1,1.0,02:01:39,7299.0,2018.0,M,Berlin
+6581,kipruto,amos,H,KEN,4,2.0,02:06:23,7583.0,2018.0,M,Berlin
+6582,kipsang,wilson,35,KEN,2,3.0,02:06:48,7608.0,2018.0,M,Berlin
+8808,yuki,kawauchi,30-34,JPN,,1,2:15:58,8158.0,2018.0,M,Boston
+8809,geoffrey,kirui,25-29,KEN,,2,2:18:23,8303.0,2018.0,M,Boston
+8810,shadrack,biwott,30-34,USA,,3,2:18:35,8315.0,2018.0,M,Boston
+2900,farah,mo,35-39,GBR,8,1,02:05:11,7511.0,2018.0,M,Chicago
+2901,bayih,mosinet geremew,25-29,ETH,4,2,02:05:24,7524.0,2018.0,M,Chicago
+2902,osako,suguru,25-29,JPN,10,3,02:05:50,7550.0,2018.0,M,Chicago
+900,wallis,daniel,18-39,GBR,2007,1,2:19:40,8380.0,2018.0,M,London
+901,gilbert,john,18-39,GBR,1436,2,2:20:19,8419.0,2018.0,M,London
+902,o'hanlon,gary,40-44,IRL,1319,3,2:21:14,8474.0,2018.0,M,London
+4691,lelisa,desisa,25-29,ETH,3,1,2:05:59,7559.0,2018.0,M,New York
+4692,shura,kitata,20-24,ETH,2,2,2:06:01,7561.0,2018.0,M,New York
+4693,geoffrey,kamworor,25-29,KEN,1,3,2:06:26,7586.0,2018.0,M,New York
+6780,bekele,kenenisa,35,ETH,2,1.0,02:01:41,7301.0,2019.0,M,Berlin
+6781,legese,birhanu,H,ETH,5,2.0,02:02:48,7368.0,2019.0,M,Berlin
+6782,lemma,sisay,H,ETH,4,3.0,02:03:36,7416.0,2019.0,M,Berlin
+8908,lawrence,cherono,30-34,KEN,2,1,2:07:57,7677.0,2019.0,M,Boston
+8909,lelisa,desisa,25-29,ETH,6,2,2:07:59,7679.0,2019.0,M,Boston
+8910,kenneth,kipkemoi,30-34,KEN,7,3,2:08:07,7687.0,2019.0,M,Boston
+3100,cherono,lawrence,30-34,KEN,4,1,02:05:45,7545.0,2019.0,M,Chicago
+3101,debela,dejene,20-24,ETH,38,2,02:05:46,7546.0,2019.0,M,Chicago
+3102,mengstu,asefa,30-34,ETH,5,3,02:05:48,7548.0,2019.0,M,Chicago
+1100,ghebresilasie,weynay,18-39,ERI,1451,1,02:17:21,8241.0,2019.0,M,London
+1101,gilbert,john,18-39,GBR,1291,2,02:19:03,8343.0,2019.0,M,London
+1102,johnson,ben,18-39,GBR,1246,3,02:20:03,8403.0,2019.0,M,London
+4889,geoffrey,kamworor,25-29,KEN,3,1,2:08:13,7693.0,2019.0,M,New York
+4890,albert,korir,25-29,KEN,5,2,2:08:36,7716.0,2019.0,M,New York
+4891,girma bekele,gebre,25-29,ETH,443,3,2:08:38,7718.0,2019.0,M,New York
+1300,shifflett,michael,18-39,USA,33608,1,02:19:57,8397.0,2020.0,M,London
+1301,dhanoa,gaven,18-39,GBR,13694,2,02:23:20,8600.0,2020.0,M,London
+1302,charnley,dan,18-39,,43109,3,02:24:24,8664.0,2020.0,M,London
+5087,kevin,quinn,40-44,GBR,143562,1,2:23:48,8628.0,2020.0,M,New York
+5088,maximo jesús,ramos,35-39,PER,32201,2,2:26:28,8788.0,2020.0,M,New York
+5089,addison,albin,30-34,USA,144047,3,2:28:28,8908.0,2020.0,M,New York
+6980,adola,guye,30,ETH,2,1.0,02:05:45,7545.0,2021.0,M,Berlin
+6981,yegon,bethwel,H,KEN,15,2.0,02:06:14,7574.0,2021.0,M,Berlin
+6982,bekele,kenenisa,35,ETH,1,3.0,02:06:47,7607.0,2021.0,M,Berlin
+8108,benson,kipruto,,,,1,02:09:51,7791.0,2021.0,M,Boston
+8109,lemi,berhanu,,,,2,02:10:37,7837.0,2021.0,M,Boston
+8110,jemal,yimer,,,,3,02:10:38,7838.0,2021.0,M,Boston
+3300,tura abdiwak,seifu,20-24,ETH,3,1,02:06:12,7572.0,2021.0,M,Chicago
+3301,rupp,galen,35-39,USA,9,2,02:06:35,7595.0,2021.0,M,Chicago
+3302,kiptanui,eric,30-34,KEN,7,3,02:06:51,7611.0,2021.0,M,Chicago
+1500,wilson,kenny,18-39,GBR,1622,1,02:18:42,8322.0,2021.0,M,London
+1501,dickinson,matthew,18-39,GBR,1252,2,02:19:23,8363.0,2021.0,M,London
+1502,braden,ross,18-39,GBR,895,3,02:19:33,8373.0,2021.0,M,London
+5285,albert,korir,25-29,KEN,2,1,2:08:22,7702.0,2021.0,M,New York
+5286,mohamed el,aaraby,30-34,MAR,11,2,2:09:06,7746.0,2021.0,M,New York
+5287,eyob,faniel,25-29,ITA,7,3,2:09:52,7792.0,2021.0,M,New York
+7180,kipchoge,eliud,35,KEN,1,1.0,02:01:09,7269.0,2022.0,M,Berlin
+7181,korir,mark,30,KEN,5,2.0,02:05:58,7558.0,2022.0,M,Berlin
+7182,abate,tadu,H,ETH,8,3.0,02:06:28,7588.0,2022.0,M,Berlin
+8208,evans,chebet,,,,1,02:06:51,7611.0,2022.0,M,Boston
+8209,lawrence,cherono,,,,2,02:07:21,7641.0,2022.0,M,Boston
+8210,benson,kipruto,,,,3,02:07:27,7647.0,2022.0,M,Boston
+3500,kipruto,benson,30-34,KEN,9,1,02:04:24,7464.0,2022.0,M,Chicago
+3501,tura abdiwak,seifu,25-29,ETH,1,2,02:04:49,7489.0,2022.0,M,Chicago
+3502,korir,john,25-29,KEN,21,3,02:05:01,7501.0,2022.0,M,Chicago
+1700,frith,thomas,18-39,GBR,1252,1,02:18:35,8315.0,2022.0,M,London
+1701,hogan,sean,18-39,GBR,1259,2,02:18:51,8331.0,2022.0,M,London
+1702,morwood,joe,18-39,GBR,1251,3,02:20:33,8433.0,2022.0,M,London
+5483,evans,chebet,30-34,KEN,3,1,2:08:41,7721.0,2022.0,M,New York
+5484,shura,kitata,25-29,ETH,5,2,2:08:54,7734.0,2022.0,M,New York
+5485,abdi,nageeye,30-34,NED,7,3,2:10:31,7831.0,2022.0,M,New York
+7480,kipchoge,eliud,,KEN,,,02:02:42,7362.0,2023.0,M,Berlin
+7481,ngetich,vincent kipkemoi,,KEN,,,02:03:13,7393.0,2023.0,M,Berlin
+7482,takele,tadese,,ETH,,,02:03:24,7404.0,2023.0,M,Berlin
+8308,evans,chebet,30-34,,,1,02:05:54,7554.0,2023.0,M,Boston
+8309,gabriel,geay,25-29,,,2,02:06:04,7564.0,2023.0,M,Boston
+8310,benson,kipruto,30-34,,,3,02:06:06,7566.0,2023.0,M,Boston
+3700,kiptum,kelvin,20-24,KEN,2,1,02:00:35,7235.0,2023.0,M,Chicago
+3701,kipruto,benson,30-34,KEN,1,2,02:04:02,7442.0,2023.0,M,Chicago
+3702,abdi,bashir,30-34,BEL,3,3,02:04:32,7472.0,2023.0,M,Chicago
+1900,kawauchi,yuki,18-39,JPN,2026,1,02:13:18,7998.0,2023.0,M,London
+1901,lepretre,alexander,18-39,GBR,1094,2,02:15:01,8101.0,2023.0,M,London
+1902,hoad,james,18-39,GBR,1640,3,02:18:38,8318.0,2023.0,M,London
+5681,tamirat,tola,30-34,ETH,4,1,2:04:58,7498.0,2023.0,M,New York
+5682,albert,korir,25-29,KEN,6,2,2:06:57,7617.0,2023.0,M,New York
+5683,shura,kitata,25-29,ETH,2,3,2:07:11,7631.0,2023.0,M,New York
